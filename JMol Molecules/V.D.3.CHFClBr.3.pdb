@@ -1,0 +1,13 @@
+HEADER
+REMARK MacSpartan exported Tue, Jun 6, 2006 4:41:06 PM
+HETATM    1  H   UNK  0001       0.127   0.652  -1.609
+HETATM    2  C   UNK  0001       0.141   0.667  -0.517
+HETATM    3 Cl   UNK  0001       1.808   0.672   0.058
+HETATM    4 Br   UNK  0001      -0.779  -0.917   0.112
+HETATM    5  F   UNK  0001      -0.501   1.780  -0.081
+CONECT    1    2
+CONECT    2    1    3    4    5
+CONECT    3    2
+CONECT    4    2
+CONECT    5    2
+END

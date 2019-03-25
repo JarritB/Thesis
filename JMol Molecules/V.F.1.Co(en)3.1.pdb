@@ -1,0 +1,76 @@
+HEADER
+REMARK MacSpartan exported Tue, Jun 6, 2006 4:42:41 PM
+HETATM    1 Co   UNK  0001      -0.190   0.429  -0.301
+HETATM    2  N   UNK  0001      -1.102  -0.042   1.255
+HETATM    3  C   UNK  0001      -2.904   0.574  -0.123
+HETATM    4  C   UNK  0001       0.270  -1.603  -2.176
+HETATM    5  N   UNK  0001      -0.092  -1.363  -0.839
+HETATM    6  C   UNK  0001       1.145  -0.420  -2.560
+HETATM    7  N   UNK  0001       0.619   0.763  -1.965
+HETATM    8  C   UNK  0001      -2.445  -0.383   0.964
+HETATM    9  N   UNK  0001      -1.867   0.632  -1.085
+HETATM   10  N   UNK  0001      -0.148   2.231   0.156
+HETATM   11  C   UNK  0001       2.025   1.550   0.798
+HETATM   12  C   UNK  0001       0.874   2.497   1.101
+HETATM   13  N   UNK  0001       1.455   0.279   0.548
+HETATM   14  H   UNK  0001      -1.090   0.718   1.929
+HETATM   15  H   UNK  0001      -0.666  -0.843   1.703
+HETATM   16  H   UNK  0001      -3.848   0.235  -0.567
+HETATM   17  H   UNK  0001      -3.092   1.567   0.306
+HETATM   18  H   UNK  0001       0.814  -2.546  -2.279
+HETATM   19  H   UNK  0001      -0.626  -1.652  -2.804
+HETATM   20  H   UNK  0001      -0.274  -2.127  -0.196
+HETATM   21  H   UNK  0001       1.205  -0.323  -3.650
+HETATM   22  H   UNK  0001       2.172  -0.593  -2.210
+HETATM   23  H   UNK  0001      -0.051   1.173  -2.610
+HETATM   24  H   UNK  0001       1.376   1.433  -1.872
+HETATM   25  H   UNK  0001      -2.516  -1.419   0.609
+HETATM   26  H   UNK  0001      -3.082  -0.302   1.852
+HETATM   27  H   UNK  0001      -2.027  -0.097  -1.775
+HETATM   28  H   UNK  0001      -1.935   1.522  -1.572
+HETATM   29  H   UNK  0001       0.008   2.803  -0.670
+HETATM   30  H   UNK  0001      -1.036   2.533   0.547
+HETATM   31  H   UNK  0001       2.587   1.906  -0.074
+HETATM   32  H   UNK  0001       2.731   1.516   1.636
+HETATM   33  H   UNK  0001       1.205   3.540   1.053
+HETATM   34  H   UNK  0001       0.511   2.325   2.123
+HETATM   35  H   UNK  0001       1.360  -0.215   1.431
+HETATM   36  H   UNK  0001       2.105  -0.269  -0.008
+CONECT    1    2    5    7    9
+CONECT    1   10   13
+CONECT    2    1    8   14   15
+CONECT    3    8    9   16   17
+CONECT    4   18   19    5    6
+CONECT    5    1    4   20
+CONECT    6    4    7   21   22
+CONECT    7    1    6   23   24
+CONECT    8    2    3   25   26
+CONECT    9    1    3   27   28
+CONECT   10    1   12   29   30
+CONECT   11   12   13   31   32
+CONECT   12   10   11   33   34
+CONECT   13    1   11   35   36
+CONECT   14    2
+CONECT   15    2
+CONECT   16    3
+CONECT   17    3
+CONECT   18    4
+CONECT   19    4
+CONECT   20    5
+CONECT   21    6
+CONECT   22    6
+CONECT   23    7
+CONECT   24    7
+CONECT   25    8
+CONECT   26    8
+CONECT   27    9
+CONECT   28    9
+CONECT   29   10
+CONECT   30   10
+CONECT   31   11
+CONECT   32   11
+CONECT   33   12
+CONECT   34   12
+CONECT   35   13
+CONECT   36   13
+END

@@ -1,0 +1,46 @@
+HEADER
+REMARK MacSpartan exported Tue, Jun 6, 2006 4:26:26 PM
+HETATM    1 Co   UNK  0001       0.014  -0.015  -0.012
+HETATM    2  N   UNK  0001       1.476  -1.319   0.061
+HETATM    3  N   UNK  0001      -1.431  -1.327  -0.174
+HETATM    4 Cl   UNK  0001       0.194   0.080  -2.154
+HETATM    5  N   UNK  0001      -0.090  -0.140   1.893
+HETATM    6  N   UNK  0001       1.462   1.303   0.157
+HETATM    7  N   UNK  0001      -1.458   1.272  -0.119
+HETATM    8  C   UNK  0001       2.684   0.668   0.081
+HETATM    9  C   UNK  0001       2.692  -0.668   0.030
+HETATM   10  C   UNK  0001      -2.673   0.630  -0.107
+HETATM   11  C   UNK  0001      -2.659  -0.706  -0.137
+HETATM   12  H   UNK  0001       1.437  -2.069  -0.633
+HETATM   13  H   UNK  0001      -1.382  -2.151   0.422
+HETATM   14  H   UNK  0001       0.756  -0.571   2.269
+HETATM   15  H   UNK  0001      -0.107   0.781   2.326
+HETATM   16  H   UNK  0001       1.420   2.092  -0.494
+HETATM   17  H   UNK  0001      -1.418   2.106   0.461
+HETATM   18  H   UNK  0001       3.559   1.298  -0.001
+HETATM   19  H   UNK  0001       3.572  -1.282  -0.099
+HETATM   20  H   UNK  0001      -3.558   1.245  -0.034
+HETATM   21  H   UNK  0001      -3.531  -1.342  -0.089
+CONECT    1    2    3    4    5
+CONECT    1    6    7
+CONECT    2    1    9   12
+CONECT    3    1   11   13
+CONECT    4    1
+CONECT    5    1   14   15
+CONECT    6    1    8   16
+CONECT    7    1   10   17
+CONECT    8    6    9   18
+CONECT    9    2    8   19
+CONECT   10    7   11   20
+CONECT   11    3   10   21
+CONECT   12    2
+CONECT   13    3
+CONECT   14    5
+CONECT   15    5
+CONECT   16    6
+CONECT   17    7
+CONECT   18    8
+CONECT   19    9
+CONECT   20   10
+CONECT   21   11
+END
