@@ -32,7 +32,9 @@ class Crysdata():
     def get_fractional_to_cartesian_matrix(self,a, b, c, alpha, beta, gamma):
         
         """
-        Code found at: https://gist.github.com/Bismarrck/a68da01f19b39320f78a
+        Original code found at: https://gist.github.com/Bismarrck/a68da01f19b39320f78a
+        
+        !changed formula to resemble one found on: https://en.wikipedia.org/wiki/Fractional_coordinates
         
         Return the transformation matrix that converts fractional coordinates to
         cartesian coordinates.
@@ -118,9 +120,9 @@ class sympos():
 
 
 
-    def readEl(cb):    
-        elements = [];
-        lb = cb.GetLoop("_atom_site_label")
+def readEl(cb):    
+    elements = [];
+    lb = cb.GetLoop("_atom_site_label")
     for el in lb:
         elements.append(Atom(el[0],el[1],el[2],el[3],el[4]))
     return elements
@@ -139,9 +141,9 @@ def main():
     #read filename
     f = "..\\Scripts\\CHA.cif" #input("Filename: ")
     # open and parse our cif
-    cf = CifFile(f)   
-   \'.b,mv,bazy7gàcxF = f[]
-    F = F[:3]
+    cf = CifFile(f)
+    f = f.rsplit('\\', 1)[-1]
+    F = f[:3]
     print(f)
     cb = cf[F]
     Crystal = Crysdata(F,cb)
