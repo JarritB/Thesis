@@ -3,7 +3,6 @@
 # -------------------------------------------
 import sys
 import numpy as np
-import subprocess
 from CifFile import CifFile
 import bpy,bgl
 # -------------------------------------------
@@ -25,14 +24,6 @@ sizedic =   {
             }
             
 # -------------------------------------------
-
-def obabel_fill_unit_cell(cif_file, p1_file):
-    """
-    Convert symmetry to P1 using openbabel.
-    """
-    subprocess.run(['obabel', '-icif', cif_file, '-ocif', '-O', p1_file, '--fillUC', 'strict'])
-
-
 
 class Crysdata():
     
@@ -117,17 +108,17 @@ class Crysdata():
                     mat = bpy.data.materials.new(name="MaterialName") #set new material to variable
                     activeObject.data.materials.append(mat) #add the material to the object
                     bpy.context.object.active_material.diffuse_color = [0,0,0] #change color
-        print("Cell corners drawn")
+    
 
 class Cell():
     
     def __init__(self,cb):
-        self.alen   =   float(cb["_cell_length_a"])
-        self.blen   =   float(cb["_cell_length_b"])
-        self.clen   =   float(cb["_cell_length_c"])
-        self.alpha  =   float(cb["_cell_angle_alpha"])
-        self.beta   =   float(cb["_cell_angle_beta"])
-        self.gamma  =   float(cb["_cell_angle_gamma"])
+        self.alen   =   float(cb["_cell_length_a"].strip("(0)"))
+        self.blen   =   float(cb["_cell_length_b"].strip("(0)"))
+        self.clen   =   float(cb["_cell_length_c"].strip("(0)"))
+        self.alpha  =   float(cb["_cell_angle_alpha"].strip("(0)"))
+        self.beta   =   float(cb["_cell_angle_beta"].strip("(0)"))
+        self.gamma  =   float(cb["_cell_angle_gamma"].strip("(0)"))
         
         
     def printout(self):
@@ -197,22 +188,20 @@ def clearWS():
 def main():
     #read filename
     f = "..\\Scripts\\CHA.cif" #input("Filename: ")
-    print('Converting %s to P1' %f)
-    obabel_fill_unit_cell(f, "temp.CIF")
     # open and parse our cif
-    cf = CifFile("temp.CIF")
+    cf = CifFile(f)
     f = f.rsplit('\\', 1)[-1]
     F = f[:3]
     print(f)
-    cb = cf["I"]#cf[F]
+    cb = cf[F]
     Crystal = Crysdata(F,cb)
-    Crystal.printout();
+    #Crystal.printout();
     #print(Crystal.ftoc)
     #print(V_cart)    
     clearWS()
     Crystal.drawCell()
     Crystal.drawAtoms()
-    #bpy.ops.object.select_all(action='DESELECT')
+    bpy.ops.object.select_all(action='DESELECT')
     
         
     

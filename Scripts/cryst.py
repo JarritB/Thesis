@@ -40,7 +40,7 @@ def distance(vec1,vec2):
 	return d
 	
 def createatom(atom):
-	bpy.ops.mesh.primitive_ico_sphere_add(view_align=False, enter_editmode=False, location=(atom[2]), layers=(True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False))
+	bpy.ops.mesh.primitive_ico_sphere_add(view_align=False, enter_editmode=False, location=(atom[2]) )
 	ob = bpy.context.object
 	ob.name = atom[0]
 	ob.show_name = False
@@ -50,9 +50,10 @@ def createatom(atom):
 	return atom
 
 def makebond(a1, center, scn):
+    bpy.ops.mesh.primitive_circle_add(radius=1,location=(0,0,0))   
 	#cursor=bpy.context.scene.cursor_location
 	#cursor=center.location
-	bondthickness=bpy.data.objects["bondthick"]
+	bondthickness= bpy.context.active_object #Set active object to variable
 	curve = bpy.data.curves.new("lnk2", 'CURVE')
 	spline = curve.splines.new('BEZIER')
 	curve.dimensions="3D"
