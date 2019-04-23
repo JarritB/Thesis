@@ -5,7 +5,12 @@ import sys
 import numpy as np
 import subprocess
 from CifFile import CifFile
-#import bpy,bgl
+try:
+    import bpy
+    Blender_env = True
+except:
+    print("Not in blender environment.")
+    
 import math
 # -------------------------------------------
 
@@ -13,10 +18,11 @@ import math
 # -------------------------------------------
 
 #global variables
+drawlattice = True      #draws lattice arround unit cell
 drawbonds = True        #draws bonds between atoms
 atom_counter = 0        #counts the number of atoms drawn
-bond_distance = 0.161       #set the max distance between bound atoms
-bond_radius = 0.1       #radius of bond
+bond_distance = 2       #set the max distance between bound atoms
+bond_radius = 0.05       #radius of bond
 #dictionary which couples atoms to a color
 colordic =  {
                 "O" : [1,0,0] ,
@@ -103,39 +109,75 @@ class Crysdata():
         return r
 
     def drawCrystal(self):
-        self.drawCell()
+        if drawlattice:
+            self.drawCell()
         self.drawAtoms()
         if(drawbonds):
             self.drawBonds()
-
+            
     def drawAtoms(self):
         for a in self.atoms:
             a.drawObj(self.ftoc)
         print("Atoms drawn:",len(self.atoms))
 
     def drawCell(self):
+        cell_corners=[]
+        cell_edges=[]
         for i in range(2):
             for j in range(2):
                 for k in range(2):
-                    bpy.ops.mesh.primitive_cube_add(radius=.3,location=toCarth(self.ftoc,[i,j,k]))
+                    bpy.ops.mesh.primitive_uv_sphere_add(size=bond_radius,location=toCarth(self.ftoc,[i,j,k]))
                     activeObject = bpy.context.active_object #Set active object to variable
+                    cell_corners.append(activeObject)
                     mat = bpy.data.materials.new(name="MaterialName") #set new material to variable
                     activeObject.data.materials.append(mat) #add the material to the object
                     bpy.context.object.active_material.diffuse_color = [0,0,0] #change color
-        print("Cell corners drawn")
+        for i in cell_corners:
+            print(i.location)
+        for i,j in zip([0,0,0,1,1,2,2,3,4,4,5,6],[1,2,4,3,5,3,6,7,5,6,7,7]):
+            cell_edges.append(self.drawLine(cell_corners[i].location,cell_corners[j].location))
+        for i in cell_corners:
+            i.select_set(action="SELECT")
+        for i in cell_edges:
+            i.select_set(action="SELECT")
+        bpy.context.view_layer.objects.active = cell_corners[0]
+        bpy.ops.object.join()    
+            
+        print("Cell box drawn")
+        
+    def drawLine(self,ac,tc):
+        dx = tc[0] - ac[0]
+        dy = tc[1] - ac[1]
+        dz = tc[2] - ac[2]
+        dist = np.sqrt(dx**2 + dy**2 + dz**2)
+        bpy.ops.mesh.primitive_cylinder_add(radius=bond_radius,depth = dist,location = (dx/2 + ac[0], dy/2 + ac[1], dz/2 + ac[2]))
+        activeObject = bpy.context.active_object
+        mat = bpy.data.materials.new(name="MaterialName") #set new material to variable
+        activeObject.data.materials.append(mat) #add the material to the object
+        bpy.context.object.active_material.diffuse_color = [0,0,0] #change color
+        
+        phi = math.atan2(dy, dx)
+        theta = math.acos(dz/dist)
+
+        bpy.context.object.rotation_euler[1] = theta
+        bpy.context.object.rotation_euler[2] = phi 
+        return activeObject
 
     def drawBonds(self):
         cnt = 0
+        bpy.ops.curve.primitive_bezier_circle_add(location=(0,0,0),radius = bond_radius)
+        bpy.context.object.name = 'bez'
         for atom in self.atoms:
-            for target in self.atoms:
-                if atom != target:
-                    if calcDistance(atom,target) <= bond_distance:
-                        self.makeBond(atom,target)
-                        cnt += 1
+             if atom.elid == "O1.5":
+                for target in self.atoms:
+                    if atom != target:
+                        if calcDistance(self.ftoc,atom,target) <= bond_distance:
+                            self.makeBond(atom,target)
+                            cnt += 1
         print("Atom bonds drawn:",cnt)
 
     #This function creates a bond between the positions of the atoms, however the objects will not be attached to the bond
-    
+    """
     def makeBond(self,atom,target):
         ac = toCarth(self.ftoc,[atom.xpos,atom.ypos,atom.zpos])
         tc = toCarth(self.ftoc,[target.xpos,target.ypos,target.zpos])
@@ -150,46 +192,63 @@ class Crysdata():
 
         bpy.context.object.rotation_euler[1] = theta
         bpy.context.object.rotation_euler[2] = phi
-
     """
-    #function in which the bond is attached to atom
+    #This function hooks the bond to the atoms
     def makeBond(self,atom,target):
+        if 'OBJECT'!=bpy.context.mode:
+            bpy.ops.object.mode_set(mode='OBJECT')
+        o1 = bpy.data.objects[atom.elid]
+        o2 = bpy.data.objects[target.elid]
+        bond = self.hookCurve(o1,o2, bpy.context.scene)
+        bpy.context.object.data.bevel_object = bpy.data.objects["bez"]
+        bpy.context.object.name = "bond{}-{}".format(atom.elid,target.elid)
+        activeObject = bpy.context.active_object #Set active object to variable
+        mat = bpy.data.materials.new(name="MaterialName") #set new material to variable
+        activeObject.data.materials.append(mat) #add the material to the object
+        bpy.context.object.active_material.diffuse_color = [255,255,255] #change color
+        if 'OBJECT'!=bpy.context.mode:
+            bpy.ops.object.mode_set(mode='OBJECT')
         
-        bpy.ops.curve.primitive_bezier_circle_add(location=(0,0,0))
-        bpy.ops.transform.resize(value=(0.25, 0.25, 0.25))
-        bpy.context.object.name = "BevelCircle"
-        
-        curve = bpy.data.curves.new("lnk2", 'CURVE')
+    def hookCurve(self,o1, o2, scn):
+        curve = bpy.data.curves.new("link", 'CURVE')
+        curve.dimensions = '3D'
         spline = curve.splines.new('BEZIER')
-        curve.dimensions="3D"
-        curve.use_stretch = True
-        curve.use_deform_bounds = True
-        curve.use_radius = True
-
-    	spline.bezier_points.add(1)
-        cen = spline.bezier_points[0]
+        
+        spline.bezier_points.add(1)
+        p0 = spline.bezier_points[0]
         p1 = spline.bezier_points[1]
-        cen.co = [atom.xpos,atom.ypos,atom.zpos]
-        cen.handle_left_type = 'VECTOR'    
-        cen.handle_right_type = 'VECTOR'
-        p1.co = [target.xpos,target.ypos,target.zpos]
-        p1.handle_right_type = 'VECTOR'
+        #p0.co = o1.location
+        p0.handle_right_type = 'VECTOR'
+        p1.co = o2.location
         p1.handle_left_type = 'VECTOR'
         
-        obj = bpy.data.objects.new("lnk2", curve)
         
-        #select objects and active        
-        bpy.ops.object.select_all(action='DESELECT')
-        py.data.objects[atom.elid].select_set('SELECT')
-        py.data.objects[target.elid].select_set('SELECT')
-        bpy.context.view_layer.objects.active = bpy.data.objects["1"]
+        obj = bpy.data.objects.new("link", curve)        
+        m0 = obj.modifiers.new("alpha", 'HOOK')
+        m0.object = o1
+        m1 = obj.modifiers.new("beta", 'HOOK') 
+        m1.object = o2
         
-        bpy.ops.object.hook_add_selob(use_bone=False)
-        bpy.context.object.data.bevel_object = bpy.data.objects["BezierCircle"]
-        
+        bpy.context.collection.objects.link(obj)
+        bpy.context.view_layer.objects.active = obj
 
-    """
+        bpy.ops.object.mode_set(mode='EDIT')   
+        
+        #Reassign the points 
+        p0 = curve.splines[0].bezier_points[0]
+        p1 = curve.splines[0].bezier_points[1]
+        
+        #Hook first control point to first atom
+        p0.select_control_point = True
+        p1.select_control_point = False 
+        bpy.ops.object.hook_assign(modifier="alpha")
 
+        #Hook second control point to first atom       
+        p1.select_control_point = True
+        p0.select_control_point = False    
+        #bpy.ops.object.hook_assign(modifier="beta")
+        
+        return obj
 
 
 class Cell():
@@ -221,7 +280,7 @@ class Atom():
         print("id:{:3} symbol:{:2} x:{:.4f} y:{:.4f} z:{:.4f}".format(self.elid,self.sym,self.xpos,self.ypos,self.zpos))
 
     def drawObj(self,ftoc):
-        bpy.ops.mesh.primitive_ico_sphere_add(size=sizedic[self.sym],location=toCarth(ftoc,[self.xpos,self.ypos,self.zpos]))
+        bpy.ops.mesh.primitive_uv_sphere_add(size=sizedic[self.sym],location=toCarth(ftoc,[self.xpos,self.ypos,self.zpos]))
         bpy.context.object.name = self.elid
         activeObject = bpy.context.active_object #Set active object to variable
         mat = bpy.data.materials.new(name="MaterialName") #set new material to variable
@@ -251,15 +310,15 @@ def readEl(cb):
             if(el[0] == previd[i]):
                 flag = True
                 break
-        if(flag):         
-            idcnt[i] += 1                
+        if(flag):
+            idcnt[i] += 1
         else:
             previd.append(el[0])
             idcnt.append(0)
             i = len(idcnt)-1
         id_t = "{}.{}".format(el[0],idcnt[i])
         elements.append(Atom(id_t,el[1],el[2],el[3],el[4]))
-            
+
     return elements
 
 def readPos(cb):
@@ -277,8 +336,14 @@ def obabel_fill_unit_cell(cif_file, p1_file):
 
     subprocess.run(['obabel', '-icif', cif_file, '-ocif', '-O', p1_file, '--fillUC', 'strict'])
 
-def calcDistance(atom1,atom2):
-    return np.sqrt((atom1.xpos-atom2.xpos)**2 + (atom1.ypos-atom2.ypos)**2 + (atom1.zpos-atom2.zpos)**2)
+def calcDistance(ftoc,atom1,atom2):
+    ac = toCarth(ftoc,[atom1.xpos,atom1.ypos,atom1.zpos])
+    tc = toCarth(ftoc,[atom2.xpos,atom2.ypos,atom2.zpos])
+    dx = tc[0] - ac[0]
+    dy = tc[1] - ac[1]
+    dz = tc[2] - ac[2]
+    dist = np.sqrt(dx**2 + dy**2 + dz**2)
+    return dist
 
 
 
@@ -288,9 +353,13 @@ def toCarth(ftoc,V_frac):
 
 
 def clearWS():
-    bpy.ops.object.mode_set(mode='OBJECT')
+    if 'OBJECT'!=bpy.context.mode:
+        bpy.ops.object.mode_set(mode='OBJECT')
     bpy.ops.object.select_all(action='SELECT')
     bpy.ops.object.delete(use_global=False)
+    #remove all previouscurves
+    for i in bpy.data.curves:
+        bpy.data.curves.remove(i)
     print("Workspace cleared.")
     return
 
@@ -307,22 +376,13 @@ def main():
     f = f.rsplit('\\', 1)[-1]
     F = f[:3]
     print(f)
-    cb = cf["I"]#cf[F]
+    cb = cf["I"]
     Crystal = Crysdata(F,cb)
-    Crystal.printout();
-    #print(Crystal.ftoc)
-    #print(V_cart)
+    #Crystal.printout()
+    if(Blender_env):
+        clearWS()
+        Crystal.drawCrystal()
+        bpy.ops.object.select_all(action='DESELECT')
 
-    """
-    Comment this part out when running outside of the Blender environment
-    --->
-    ""
-    clearWS()
-    Crystal.drawCrystal()
-    bpy.ops.object.select_all(action='DESELECT')
-
-    ""
-    <----
-    """
 
 main()
