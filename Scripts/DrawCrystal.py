@@ -18,21 +18,32 @@ import math
 # -------------------------------------------
 
 #global variables
-drawlattice = True      #draws lattice arround unit cell
-drawbonds = True        #draws bonds between atoms
-atom_counter = 0        #counts the number of atoms drawn
-bond_distance = 2       #set the max distance between bound atoms
-bond_radius = 0.05       #radius of bond
+
+resolution      =   "MED"       #sets key for resolutiondic
+draw_lattice    =   True        #draws lattice borders arround unit cell
+lattice_size    =   0.03        #sets size of lattice borders
+draw_bonds      =   True        #draws bonds between atoms
+bond_distance   =   2           #set the max distance between bound atoms
+bond_radius     =   0.05        #radius of bond
+
+#dictionaries
+#sets detail of spheres 
+resolutiondic   =   {
+                        "MIN"   :   8,
+                        "LOW"   :   16,
+                        "MED"   :   32,
+                        "HIGH"  :   64
+                    }           
 #dictionary which couples atoms to a color
-colordic =  {
-                "O" : [1,0,0] ,
-                "Si" : [0.25,0.25,1]
-            }
+colordic        =   {
+                        "O"     :   [1,0,0],
+                        "Si"    :   [0.25,0.25,1]
+                    }
 #dictionary which couples atoms to a specific size
-sizedic =   {
-                "O" : 0.3 ,
-                "Si" : 0.6
-            }
+sizedic         =   {
+                        "O"     :   0.3,
+                        "Si"    :   0.6
+                    }
 
 # -------------------------------------------
 
@@ -109,10 +120,10 @@ class Crysdata():
         return r
 
     def drawCrystal(self):
-        if drawlattice:
+        if draw_lattice:
             self.drawCell()
         self.drawAtoms()
-        if(drawbonds):
+        if(draw_bonds):
             self.drawBonds()
             
     def drawAtoms(self):
@@ -123,23 +134,25 @@ class Crysdata():
     def drawCell(self):
         cell_corners=[]
         cell_edges=[]
+        #calculate and draw corners
         for i in range(2):
             for j in range(2):
                 for k in range(2):
-                    bpy.ops.mesh.primitive_uv_sphere_add(size=bond_radius,location=toCarth(self.ftoc,[i,j,k]))
+                    bpy.ops.mesh.primitive_uv_sphere_add(size=lattice_size,location=toCarth(self.ftoc,[i,j,k]))
                     activeObject = bpy.context.active_object #Set active object to variable
                     cell_corners.append(activeObject)
                     mat = bpy.data.materials.new(name="MaterialName") #set new material to variable
                     activeObject.data.materials.append(mat) #add the material to the object
                     bpy.context.object.active_material.diffuse_color = [0,0,0] #change color
-        for i in cell_corners:
-            print(i.location)
+        #draw lines
         for i,j in zip([0,0,0,1,1,2,2,3,4,4,5,6],[1,2,4,3,5,3,6,7,5,6,7,7]):
             cell_edges.append(self.drawLine(cell_corners[i].location,cell_corners[j].location))
+        #select all line and corners
         for i in cell_corners:
             i.select_set(action="SELECT")
         for i in cell_edges:
             i.select_set(action="SELECT")
+        #set corner in origin as active and join meshes as one object 
         bpy.context.view_layer.objects.active = cell_corners[0]
         bpy.ops.object.join()    
             
@@ -150,7 +163,7 @@ class Crysdata():
         dy = tc[1] - ac[1]
         dz = tc[2] - ac[2]
         dist = np.sqrt(dx**2 + dy**2 + dz**2)
-        bpy.ops.mesh.primitive_cylinder_add(radius=bond_radius,depth = dist,location = (dx/2 + ac[0], dy/2 + ac[1], dz/2 + ac[2]))
+        bpy.ops.mesh.primitive_cylinder_add(vertices=resolutiondic[resolution],radius=lattice_size,depth = dist,location = (dx/2 + ac[0], dy/2 + ac[1], dz/2 + ac[2]))
         activeObject = bpy.context.active_object
         mat = bpy.data.materials.new(name="MaterialName") #set new material to variable
         activeObject.data.materials.append(mat) #add the material to the object
@@ -168,12 +181,11 @@ class Crysdata():
         bpy.ops.curve.primitive_bezier_circle_add(location=(0,0,0),radius = bond_radius)
         bpy.context.object.name = 'bez'
         for atom in self.atoms:
-             if atom.elid == "O1.5":
-                for target in self.atoms:
-                    if atom != target:
-                        if calcDistance(self.ftoc,atom,target) <= bond_distance:
-                            self.makeBond(atom,target)
-                            cnt += 1
+            for target in self.atoms:
+                if atom != target:
+                    if calcDistance(self.ftoc,atom,target) <= bond_distance:
+                        self.makeBond(atom,target)
+                        cnt += 1
         print("Atom bonds drawn:",cnt)
 
     #This function creates a bond between the positions of the atoms, however the objects will not be attached to the bond
@@ -219,7 +231,7 @@ class Crysdata():
         p1 = spline.bezier_points[1]
         #p0.co = o1.location
         p0.handle_right_type = 'VECTOR'
-        p1.co = o2.location
+        #p1.co = o2.location
         p1.handle_left_type = 'VECTOR'
         
         
@@ -232,7 +244,8 @@ class Crysdata():
         bpy.context.collection.objects.link(obj)
         bpy.context.view_layer.objects.active = obj
 
-        bpy.ops.object.mode_set(mode='EDIT')   
+        bpy.ops.object.mode_set(mode='EDIT') 
+          
         
         #Reassign the points 
         p0 = curve.splines[0].bezier_points[0]
@@ -242,12 +255,14 @@ class Crysdata():
         p0.select_control_point = True
         p1.select_control_point = False 
         bpy.ops.object.hook_assign(modifier="alpha")
-
-        #Hook second control point to first atom       
+        
+        #Hook second control point to first atom
+        p0 = curve.splines[0].bezier_points[0]
+        p1 = curve.splines[0].bezier_points[1]
         p1.select_control_point = True
         p0.select_control_point = False    
-        #bpy.ops.object.hook_assign(modifier="beta")
-        
+        bpy.ops.object.hook_assign(modifier="beta")
+                
         return obj
 
 
@@ -280,7 +295,7 @@ class Atom():
         print("id:{:3} symbol:{:2} x:{:.4f} y:{:.4f} z:{:.4f}".format(self.elid,self.sym,self.xpos,self.ypos,self.zpos))
 
     def drawObj(self,ftoc):
-        bpy.ops.mesh.primitive_uv_sphere_add(size=sizedic[self.sym],location=toCarth(ftoc,[self.xpos,self.ypos,self.zpos]))
+        bpy.ops.mesh.primitive_uv_sphere_add(segments=resolutiondic[resolution],ring_count=resolutiondic[resolution]/2,size=sizedic[self.sym],location=toCarth(ftoc,[self.xpos,self.ypos,self.zpos]))
         bpy.context.object.name = self.elid
         activeObject = bpy.context.active_object #Set active object to variable
         mat = bpy.data.materials.new(name="MaterialName") #set new material to variable
