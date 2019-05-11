@@ -120,8 +120,8 @@ class Operator(bpy.types.Operator):
             global draw_quality
             draw_quality = context.scene.quality_selection_mode
 
-
             drawCrystal(file_path)
+
         return {'FINISHED'}
 
 
@@ -189,25 +189,29 @@ class Panel(bpy.types.Panel):
         scn = context.scene
         layout = self.layout
         layout.ui_units_x = 15
+        layout.label(text = 'Input file')
+
+        '''
+        for i in range(150):
+            layout.label(text = str(i),icon_value =i)
+        '''
         box = layout.box()
-        row = box.row()
-        row.label(text = 'Settings',icon ='PREFERENCES')
-        box = layout.box()
-        # Create a split row within it
         row = box.row()
         splitrow = row.split(factor=0.075)
-        # Store references to each column of the split row
         left_col = splitrow.column()
         right_col = splitrow.column()
-        left_col.operator('error.scan_file',icon='FILE',text="")
-        right_col.label(text=file_path)
+        left_col.operator('error.scan_file',icon_value=108,text="")
+        right_col.label(text=file_path.rsplit('\\', 2)[-1])
+        layout.label(text = 'Settings',icon_value =117)
+        box = layout.box()
         box.prop(scn,'draw_bonds')
         box.prop(scn,'bond_distance')
         box.prop(scn,'draw_lattice')
         box.prop(scn,'print_data')
-        layout.prop(scn, 'quality_selection_mode')
+        box.prop(scn, 'quality_selection_mode')
         layout.separator()
         layout.operator('object.cdtb_operator',text="Draw Crystal")
+        layout.separator()
 
 
     @classmethod
