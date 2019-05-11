@@ -1,5 +1,5 @@
 blender-2.80.0-git.3c8c1841d72-windows64/*
+!blender-2.80.0-git.3c8c1841d72-windows64/2.80/scripts/addons/cyrstallographic_interface/*
 VESTA-win64/*
 *.exe
 *.lnk
-!blender-2.80.0-git.3c8c1841d72-windows64/2.80/scripts/addons/cyrstallographic_interface/*
