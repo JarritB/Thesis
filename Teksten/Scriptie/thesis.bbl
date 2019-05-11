@@ -59,6 +59,17 @@ Momma, K. and Izumi, F. (2008).
   structural analysis.
 \newblock {\em Journal of Applied Crystallography}, 41(3):653--658.
 
+\bibitem[OpenBabel, 2016]{OBAB1}
+OpenBabel (2016).
+\newblock Open babel: The open source chemistry toolbox.
+\newblock \url{http://openbabel.org/wiki/Main_Page}.
+\newblock GitHub: \url{https://github.com/openbabel/openbabel}.
+
+\bibitem[Tangent, 2018]{NEXT1}
+Tangent (2018).
+\newblock Next gen.
+\newblock \url{https://www.tangent-animation.com/next-gen}.
+
 \bibitem[Theo~Hahn and Muller, 2005]{CRYS2}
 Theo~Hahn, H.~W. and Muller, U. (2005).
 \newblock {\em International Tables for Crystallography Volume A: Space-Group
