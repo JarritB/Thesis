@@ -142,6 +142,8 @@ class Operator(bpy.types.Operator):
 
             global draw_style
             draw_style = context.scene.style_selection_mode
+            if(draw_style=="SPACE FILLING"):
+                draw_bonds = False
 
             global draw_quality
             draw_quality = context.scene.quality_selection_mode
