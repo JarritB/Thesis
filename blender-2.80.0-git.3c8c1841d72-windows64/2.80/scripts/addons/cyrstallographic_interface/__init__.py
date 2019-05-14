@@ -2,10 +2,12 @@
 # MODULES
 # -------------------------------------------
 import sys
+import time
 import os
 import numpy as np
 import subprocess
 import math
+from mathutils import Vector
 from CifFile import CifFile
 try:
     import bpy
@@ -26,6 +28,7 @@ draw_lattice    =   False           # draws unit cell outline
 bond_distance   =   2               # set the max distance between bound atoms
 lattice_size    =   0.03            # sets size of lattice borders
 bond_radius     =   0.05            # radius of bond
+render_image	=	True			# render final image
 
 
 # dictionaries
@@ -41,7 +44,8 @@ qualitydic   =  {
                         "MIN"   :   8,
                         "LOW"   :   16,
                         "MED"   :   32,
-                        "HIGH"  :   64
+                        "HIGH"  :   64,
+                        "MAX"   :   128
                 }
 
 '''
@@ -61,13 +65,20 @@ sizedic         =   {
                     }
 '''
 # Read in dictionaries from external files
-# Atom data was extracted from https://en.wikipedia.org/wiki/Atomic_radii_of_the_elements_(data_page)
+
+
+
 path = os.path.dirname(os.path.realpath(__file__))
+
 # dictionary which couples atoms to a color
+# Color scheme following the CPK convention was extracted from https://en.wikipedia.org/wiki/CPK_coloring#Typical_assignments
+# data can be changed by modifying the values in colordic.txt
 with open(path+'\\colordic.txt','r') as inf:
     colordic = eval(inf.read())
 
 # dictionary which couples atoms to a specific size
+# Atom data, in Ångström, was extracted from https://en.wikipedia.org/wiki/Atomic_radii_of_the_elements_(data_page)
+# data can be changed by modifying the values in sizedic.txt
 with open(path+'\\sizedic.txt','r') as inf:
     sizedic = eval(inf.read())
 
@@ -144,6 +155,8 @@ class Operator(bpy.types.Operator):
             draw_style = context.scene.style_selection_mode
             if(draw_style=="SPACE FILLING"):
                 draw_bonds = False
+            if(draw_style=="STICK"):
+                draw_bonds = True
 
             global draw_quality
             draw_quality = context.scene.quality_selection_mode
@@ -198,7 +211,8 @@ class Operator(bpy.types.Operator):
             ("MIN",     "MIN",      "",     1),
             ("LOW",     "LOW",      "",     2),
             ("MED",     "MED",      "",     3),
-            ("HIGH",    "HIGH",     "",     5)
+            ("HIGH",    "HIGH",     "",     4),
+            ("MAX",     "MAX",      "",     5)
         ]
 
         bpy.types.Scene.quality_selection_mode = bpy.props.EnumProperty(
@@ -294,11 +308,12 @@ class Crysdata():
 
     def __init__(self,F,cb):
 
+        self.start  =   time.time()
         self.name   =   F
         self.cell   =   Cell(cb)
         self.atoms  =   readEl(cb)
         self.pos    =   readPos(cb)
-        c = self.cell
+        c           =   self.cell
         self.ftoc   =   self.get_fractional_to_cartesian_matrix(c.alen,c.blen,c.clen,c.alpha,c.beta,c.gamma)
 
 
@@ -369,9 +384,12 @@ class Crysdata():
 
         if draw_lattice:
             self.drawCell()
+            print("Lattice drawn after {:.3f} seconds".format((time.time()-self.start)))
         self.drawAtoms()
+        print("Atoms drawn after {:.3f} seconds".format((time.time()-self.start)))
         if(draw_bonds):
             self.drawBonds()
+            print("Bonds drawn after {:.3f} seconds".format((time.time()-self.start)))
 
 
     def drawAtoms(self):
@@ -438,6 +456,8 @@ class Crysdata():
         for atom in self.atoms:
             for target in self.atoms:
                 if atom != target:
+                    if("bond{}-{}".format(target.elid,atom.elid)in bpy.data.objects):
+                        continue
                     if calcDistance(self.ftoc,atom,target) <= bond_distance:
                         self.makeBond(atom,target)
                         cnt += 1
@@ -621,6 +641,27 @@ def toCarth(ftoc,V_frac):
 
     return np.dot(ftoc, V_frac)
 
+def look_at(obj_camera, point):
+    loc_camera = obj_camera.matrix_world.to_translation()
+    direction = point - loc_camera
+    # point the cameras '-Z' and use its 'Y' as up
+    rot_quat = direction.to_track_quat('-Z', 'Y')
+    # assume we're using euler rotation
+    obj_camera.rotation_euler = rot_quat.to_euler()
+
+def renderImage(x,y,z):
+
+    bpy.ops.object.camera_add(view_align=True, enter_editmode=False, location=(5*x,5*y,5*z))
+    print("camera added")
+    bpy.ops.object.light_add(type='SUN', view_align=False, location=(0, 0, 0))
+    obj_camera = bpy.data.objects["Camera"]
+    look_at(obj_camera, Vector([0,0,z/4]))
+    obj_camera.data.type = 'ORTHO'
+    obj_camera.data.ortho_scale = ((x+y+z))
+
+
+
+
 
 def clearWS():
 
@@ -635,7 +676,6 @@ def clearWS():
     return
 
 def drawCrystal(file):
-
     # Check OpenBabel installation
     try:
         # Convert the cif file to its P1 symmetry notation as a temporary cif file
@@ -643,8 +683,6 @@ def drawCrystal(file):
         obabel_fill_unit_cell(file, "temp.CIF")
     except:
         print("No OpenBabel installation found, install it from http://openbabel.org/wiki/Category:Installation")
-        print("No OpenBabel installation found, install it from http://openbabel.org/wiki/Category:Installation")
-
     # Open and parse our cif
     cf = CifFile("temp.CIF")
     f = file.rsplit('\\', 1)[-1]
@@ -662,3 +700,5 @@ def drawCrystal(file):
         clearWS()
         Crystal.drawCrystal()
         bpy.ops.object.select_all(action='DESELECT')
+        if(render_image):
+            renderImage(Crystal.cell.alen,Crystal.cell.blen,Crystal.cell.clen)
