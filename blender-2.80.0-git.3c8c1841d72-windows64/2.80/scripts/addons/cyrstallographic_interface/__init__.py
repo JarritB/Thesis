@@ -2,6 +2,11 @@
 # MODULES
 # -------------------------------------------
 import sys
+import platform
+if(platform.system()== "Windows"):
+	dir_sep = "\\"
+else:
+	dir_sep = "/"
 import time
 import os
 import numpy as np
@@ -73,17 +78,16 @@ sizedic         =   {
 
 
 path = os.path.dirname(os.path.realpath(__file__))
-
 # dictionary which couples atoms to a color
 # Color scheme following the CPK convention was extracted from https://en.wikipedia.org/wiki/CPK_coloring#Typical_assignments
 # data can be changed by modifying the values in colordic.txt
-with open(path+'\\colordic.txt','r') as inf:
+with open(path+dir_sep+'colordic.txt','r') as inf:
     colordic = eval(inf.read())
 
 # dictionary which couples atoms to a specific size
 # Atom data, in Ångström, was extracted from https://en.wikipedia.org/wiki/Atomic_radii_of_the_elements_(data_page)
 # data can be changed by modifying the values in sizedic.txt
-with open(path+'\\sizedic.txt','r') as inf:
+with open(path+dir_sep+'\\sizedic.txt','r') as inf:
     sizedic = eval(inf.read())
 
 
