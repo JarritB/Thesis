@@ -4,7 +4,11 @@
 import sys
 import numpy as np
 import subprocess
-from CifFile import CifFile
+try:
+	from CifFile import CifFile
+except:
+	print("PyCIFRW not installed, try: pip install PyCifRW")
+	sys.exit()
 try:
     import bpy
     Blender_env = True

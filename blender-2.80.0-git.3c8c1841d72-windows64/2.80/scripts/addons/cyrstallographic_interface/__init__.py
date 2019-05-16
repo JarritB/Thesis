@@ -8,7 +8,11 @@ import numpy as np
 import subprocess
 import math
 from mathutils import Vector
-from CifFile import CifFile
+try:
+	from CifFile import CifFile
+except:
+	print("PyCIFRW not installed, try: pip install PyCifRW")
+	sys.exit()
 try:
     import bpy
     Blender_env = True
