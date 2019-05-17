@@ -18,6 +18,8 @@
 \BOOKMARK [1][-]{section.2.5}{Blender en de Blender API}{chapter.2}% 18
 \BOOKMARK [1][-]{section.2.6}{Conclusie}{chapter.2}% 19
 \BOOKMARK [0][-]{chapter.3}{Ontwerpproces}{}% 20
-\BOOKMARK [1][-]{section.3.1}{Inwendige symmetrie}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.1}{Omvormen van het invoersbestand}{chapter.3}% 21
 \BOOKMARK [1][-]{section.3.2}{Van CIF naar py}{chapter.3}% 22
-\BOOKMARK [0][-]{chapter*.19}{Bibliografie}{}% 23
+\BOOKMARK [1][-]{section.3.3}{Tekenen in Blender}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.4}{Cre\353ren van een Blender add-on}{chapter.3}% 24
+\BOOKMARK [0][-]{chapter*.20}{Bibliografie}{}% 25

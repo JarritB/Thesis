@@ -34,10 +34,13 @@ draw_bonds      =   False           # draws bonds between atoms
 draw_style      =   "SPACE FILLING" # sets draw style
 draw_quality    =   "MED"           # sets key for qualitydic
 draw_lattice    =   False           # draws unit cell outline
+atom_name       =   False           # displays names of atoms
 bond_distance   =   2               # set the max distance between bound atoms
 lattice_size    =   0.03            # sets size of lattice borders
 bond_radius     =   0.05            # radius of bond
-render_image	=	True			# render final image
+add_camera	    =	True			# render final image
+atom_color		=	True			# draw atoms in color
+user_feedback   =   ""              # feedback for the user
 
 
 # dictionaries
@@ -116,6 +119,8 @@ class ScanFileOperator(bpy.types.Operator):
     def execute(self, context):
 
         global file_path
+        global user_feedback
+        user_feedback = ""
         file_path = self.filepath
         return {'FINISHED'}
 
@@ -144,9 +149,13 @@ class Operator(bpy.types.Operator):
     # Runs the whole program
     def execute(self, context):
 
+        global user_feedback
         if(file_path == "Select a file"):
             print("No file selected")
+            user_feedback = "No File selected"
         else:
+            user_feedback = "Drawing crystal"
+
             global draw_bonds
             draw_bonds = context.scene.draw_bonds
 
@@ -156,20 +165,29 @@ class Operator(bpy.types.Operator):
             global draw_lattice
             draw_lattice = context.scene.draw_lattice
 
+            global atom_name
+            atom_name = context.scene.atom_name
+
             global print_data
             print_data = context.scene.print_data
 
             global draw_style
+            global atom_color
             draw_style = context.scene.style_selection_mode
             if(draw_style=="SPACE FILLING"):
                 draw_bonds = False
             if(draw_style=="STICK"):
                 draw_bonds = True
+                atom_color = False
+            else:
+                atom_color = True
 
             global draw_quality
             draw_quality = context.scene.quality_selection_mode
-
+            global add_camera
+            add_camera = context.scene.add_camera
             drawCrystal(file_path)
+            user_feedback = "Crystal drawn"
 
         return {'FINISHED'}
 
@@ -192,14 +210,19 @@ class Operator(bpy.types.Operator):
             precision=2
         )
 
-        bpy.types.Scene.print_data = bpy.props.BoolProperty(
-            name="Print data",
-            description="Print crystal data in terminal"
+        bpy.types.Scene.atom_name = bpy.props.BoolProperty(
+            name="Atom names",
+            description="Display the name of atoms"
         )
 
         bpy.types.Scene.draw_lattice = bpy.props.BoolProperty(
             name="Draw lattice",
             description="Draw unit cell outline"
+        )
+
+        bpy.types.Scene.print_data = bpy.props.BoolProperty(
+            name="Print data",
+            description="Print crystal data in terminal"
         )
 
         # Dropdown menu for drawing style
@@ -228,6 +251,10 @@ class Operator(bpy.types.Operator):
                 name="Quality",
                 default="MED"
             )
+        bpy.types.Scene.add_camera = bpy.props.BoolProperty(
+            name="Place camera",
+            description="Place a camera and light to make rendering possible"
+        )
 
 
     @classmethod
@@ -270,14 +297,17 @@ class Panel(bpy.types.Panel):
         box.prop(scn,'draw_bonds')
         box.prop(scn,'bond_distance')
         box.prop(scn,'draw_lattice')
+        box.prop(scn, 'atom_name')
         box.prop(scn,'print_data')
         box.prop(scn, 'style_selection_mode')
         box.prop(scn, 'quality_selection_mode')
+        box.prop(scn, 'add_camera')
         layout.separator()
         splitrow = layout.split(factor=0.3)
         col = splitrow.column()
         col.operator('object.cdtb_operator',text="Draw Crystal")
         col = splitrow.column()
+        col.label(text=user_feedback)
         layout.separator()
 
 
@@ -577,7 +607,12 @@ class Atom():
         activeObject = bpy.context.active_object # Set active object to variable
         mat = bpy.data.materials.new(name="MaterialName") # set new material to variable
         activeObject.data.materials.append(mat) # add the material to the object
-        bpy.context.object.active_material.diffuse_color = colordic[self.sym] # change color
+        if(atom_name):
+            bpy.context.object.show_name = True
+        if(atom_color):
+            bpy.context.object.active_material.diffuse_color = colordic[self.sym] # change color to dictiomary color
+        else:
+            bpy.context.object.active_material.diffuse_color = [1,1,1] # change color to white
 
 
 class sympos():
@@ -657,7 +692,7 @@ def look_at(obj_camera, point):
     # assume we're using euler rotation
     obj_camera.rotation_euler = rot_quat.to_euler()
 
-def renderImage(x,y,z):
+def addCamera(x,y,z):
 
     bpy.ops.object.camera_add(view_align=True, enter_editmode=False, location=(5*x,5*y,5*z))
     print("camera added")
@@ -708,5 +743,5 @@ def drawCrystal(file):
         clearWS()
         Crystal.drawCrystal()
         bpy.ops.object.select_all(action='DESELECT')
-        if(render_image):
-            renderImage(Crystal.cell.alen,Crystal.cell.blen,Crystal.cell.clen)
+        if(add_camera):
+            addCamera(Crystal.cell.alen,Crystal.cell.blen,Crystal.cell.clen)

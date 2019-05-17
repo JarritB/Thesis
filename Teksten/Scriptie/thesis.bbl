@@ -53,6 +53,12 @@ IZA (2018).
 \newblock Database of zeolite structures.
 \newblock \url{http://europe.iza-structure.org/IZA-SC/ftc_table.php}.
 
+\bibitem[Mike, 2018]{ENUM}
+Mike (2018).
+\newblock Python 3: An intro to enumerations.
+\newblock
+  \url{https://www.blog.pythonlibrary.org/2018/03/20/python-3-an-intro-to-enumerations/}.
+
 \bibitem[Momma and Izumi, 2008]{VESTA1}
 Momma, K. and Izumi, F. (2008).
 \newblock Vesta: a three-dimensional visualization system for electronic and

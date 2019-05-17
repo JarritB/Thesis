@@ -42,11 +42,19 @@
 \contentsline {subsection}{\numberline {2.5.6}Scripten in Blender met de Blender API}{21}{subsection.2.5.6}
 \contentsline {section}{\numberline {2.6}Conclusie}{22}{section.2.6}
 \contentsline {chapter}{\numberline {3}Ontwerpproces}{23}{chapter.3}
-\contentsline {section}{\numberline {3.1}Inwendige symmetrie}{23}{section.3.1}
+\contentsline {section}{\numberline {3.1}Omvormen van het invoersbestand}{23}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Symmetrieoperaties in het CIF-formaat}{23}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}OpenBabel}{24}{subsection.3.1.2}
 \contentsline {section}{\numberline {3.2}Van CIF naar py}{25}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Ontwerpen van datastructuren}{25}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Zelf een parser ontwerpen}{25}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Inlezen van CIF-bestanden}{26}{subsection.3.2.3}
-\contentsline {chapter}{Bibliografie}{27}{chapter*.19}
+\contentsline {subsection}{\numberline {3.2.2}Inlezen van CIF-bestanden}{25}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Tekenen in Blender}{26}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Berekenen van de conversiematrix}{26}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Omkadering van de eenheidscel}{27}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Atomen}{27}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Atoombindingen}{27}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}Cre\IeC {\"e}ren van een Blender add-on}{28}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Blender add-ons}{28}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Opbouw van een add-on script}{28}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Operatoren}{29}{subsection.3.4.3}
+\contentsline {chapter}{Bibliografie}{30}{chapter*.20}
