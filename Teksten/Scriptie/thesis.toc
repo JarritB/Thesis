@@ -47,7 +47,7 @@
 \contentsline {subsection}{\numberline {3.1.2}OpenBabel}{24}{subsection.3.1.2}
 \contentsline {section}{\numberline {3.2}Van CIF naar py}{25}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Ontwerpen van datastructuren}{25}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Inlezen van CIF-bestanden}{25}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}Inlezen van CIF-bestanden}{26}{subsection.3.2.2}
 \contentsline {section}{\numberline {3.3}Tekenen in Blender}{26}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Berekenen van de conversiematrix}{26}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Omkadering van de eenheidscel}{27}{subsection.3.3.2}
@@ -55,6 +55,8 @@
 \contentsline {subsection}{\numberline {3.3.4}Atoombindingen}{27}{subsection.3.3.4}
 \contentsline {section}{\numberline {3.4}Cre\IeC {\"e}ren van een Blender add-on}{28}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Blender add-ons}{28}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Opbouw van een add-on script}{28}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.2}Opbouw van een add-on script}{29}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}Operatoren}{29}{subsection.3.4.3}
-\contentsline {chapter}{Bibliografie}{30}{chapter*.20}
+\contentsline {subsection}{\numberline {3.4.4}Panelen}{29}{subsection.3.4.4}
+\contentsline {section}{\numberline {3.5}Conclusie}{31}{section.3.5}
+\contentsline {chapter}{Bibliografie}{32}{chapter*.21}
