@@ -59,4 +59,8 @@
 \contentsline {subsection}{\numberline {3.4.3}Operatoren}{29}{subsection.3.4.3}
 \contentsline {subsection}{\numberline {3.4.4}Panelen}{29}{subsection.3.4.4}
 \contentsline {section}{\numberline {3.5}Conclusie}{31}{section.3.5}
-\contentsline {chapter}{Bibliografie}{32}{chapter*.21}
+\contentsline {chapter}{\numberline {4}Werking van het programma}{32}{chapter.4}
+\contentsline {section}{\numberline {4.1}Installatie van externe programma's}{32}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}OpenBabel}{32}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}PyCIFRW}{33}{subsection.4.1.2}
+\contentsline {chapter}{Bibliografie}{34}{chapter*.21}

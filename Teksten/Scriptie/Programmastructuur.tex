@@ -1,0 +1,43 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%                                                                 %
+%                           INLEIDING                             %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+\chapter{Werking van het programma}
+
+In hoofdstuk drie wordt een algemeen overzicht gegeven van de opbouw en werking van het programma. Er wordt echter niet dieper ingegaan op de onderliggende code van het programma. Dit hoofdstuk zal zich voornamelijk verdiepen in deze code, de structuur ervan en zullen de belangrijkste onderdelen ervan worden uitgelegd. Hiernaast zal er ook worden beschreven hoe de externe programma's moeten worden geïnstalleerd en hoe deze in het programma worden geïmplementeerd. 
+\par
+Om de gedachtegang achter het ontwerpproces makkelijker volgbaar te maken zal er in dit hoofdstuk vooral gebruikt gemaakt worden van een actieve schrijfwijze en de wetenschappelijke 'we'-vorm. De code zal worden uitgelegd aan de hand van listings die rechtstreeks uit de code van het programma komen. De volledige code kan worden teruggevonden in de bijlages van deze tekst.[Bijlage D]
+\par
+
+
+\section{Installatie van externe programma's}
+Zoals in hoodstuk drie wordt beschreven gaan we gebruik maken van twee externe programma's die we zullen nodig zullen hebben om het programma uit te kunnen voeren, OpenBabel en PyCIFRW. Deze sectie legt uit hoe we deze kunnen installeren op een systeem. Hoewel deze in het geval van dit onderzoek met Windows 10 wordt gewerkt, werken deze software ook op oudere versies van Windows. Ons programma is gericht op besturingssysteemonafhankelijkheid, dit wil zeggen dat het ook op Linux en Apple moet werken. Het is echter mogelijk dat het installeren van deze externe programma's anders verloopt dan op Windows. De installatie van deze programma's zal in deze tekst echter enkel voor Windowssytemen worden uitgelegd.
+
+\subsection{OpenBabel}  
+De installatie van OpenBabel kan gevonden worden op hun webpagina: \url{http://openbabel.org/wiki/Category:Installation} en is gratis voor iedereen. Op deze pagina gaan we de OpenBabelGUI \textit{installer} downloaden, zie Figuur[4.1], let op dat de bit-versie met die van ons systeem overeenkomt. De download zou automatisch moeten starten. Ten slotte kunnen we de installatiewizard starten door het gedownloade bestand uit te voeren.
+\par
+Na het volgen van de installatiewizard zou de OpenBabel GUI moeten geïnstalleerd zijn op ons systeem, en kan het gebruikt worden in ons programma. Dit zal in het verdere verloop van dit hoofdstuk worden uitgelegd.
+
+\subsection{PyCIFRW}
+Voor de PyCIFRW module op ons systeem te installeren hebben we nood aan een prompt waarop Pyhton3.7 kan worden uitgevoerd. Zo'n prompt kan verkregen worden door anaconda te installeren en gebruik te maken van \textit{Anaconda prompt}. Vervolgens hebben we de pip installer nodig voor Python en is automatisch aanwezig op Python3.7
+\par 
+Pip laat ons toe allerlei Python modules te installeren, waaronder de PyCIFRW module. Dit doen we met door volgend commando in te geven in het prompt:
+\begin{lstlisting}[caption=,numbers=none,language= bash]
+  pip install PyCifRW
+\end{lstlisting}
+Dit zorgt ervoor dat we nu toegang hebben tot de PyCIFRW module wanneer we Python uitvoeren en kan eenvoudig getest worden door Python op te starten en het volgende lijn code uit te voeren:
+\begin{lstlisting}[caption=,numbers=none]
+  import CifFile
+\end{lstlisting}
+
+Als er geen foutmelding wordt gegeven wilt het zeggen dat de module correct is geïnstalleerd op voor onze Python installatie. 
+\par
+Doordat Blender een eigen Python installatie heeft zal deze nog geen toegang hebben tot onze geïnstalleerde modules. Dit kunnen we oplossen door de map die de PyCIFRW module bevat te kopiëren naar de Python installatie van Blender. Deze map kunnen we vinden op plaats waar we Python hebben geïnstalleerd op ons systeem, in het geval dat Anaconda wordt gebruikt vinden we deze in de installatiemap van Anaconda in de submap \textit{site-packages} (Anaconda3 \textgreater \textgreater{} Lib \textgreater \textgreater{} site-packages).
+Vervolgens moeten we de map \textit{CifFile} kopiëren naar de Python installatie van Blender (blender-2.80.0-git.3c8c1841d72-windows64 \textgreater \textgreater{} 2.80 \textgreater \textgreater{} python \textgreater \textgreater{} lib \textgreater \textgreater{} site-packages). 
+\par
+Een alternatieve methode om de PyCIFRW module werkende te krijgen op Blender, zonder nood te hebben aan een Python3.7 installatie, is door de \textit{CifFile} map rechtstreeks in de Pythoninstallatiemap van Blender te plaatsen. De \textit{CifFile} kan gedownload worden vanaf de GitHub pagina van deze thesis: \url{https://github.com/JarritB/Thesis}
+\par
+  
