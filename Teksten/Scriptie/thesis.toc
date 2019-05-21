@@ -63,4 +63,7 @@
 \contentsline {section}{\numberline {4.1}Installatie van externe programma's}{32}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}OpenBabel}{32}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}PyCIFRW}{33}{subsection.4.1.2}
-\contentsline {chapter}{Bibliografie}{34}{chapter*.21}
+\contentsline {section}{\numberline {4.2}Inlezen van het bestand}{33}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Controleren van het bestand}{33}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Uitvoeren van OpenBabel}{34}{subsection.4.2.2}
+\contentsline {chapter}{Bibliografie}{36}{chapter*.21}

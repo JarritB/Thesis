@@ -39,5 +39,51 @@ Doordat Blender een eigen Python installatie heeft zal deze nog geen toegang heb
 Vervolgens moeten we de map \textit{CifFile} kopiëren naar de Python installatie van Blender (blender-2.80.0-git.3c8c1841d72-windows64 \textgreater \textgreater{} 2.80 \textgreater \textgreater{} python \textgreater \textgreater{} lib \textgreater \textgreater{} site-packages). 
 \par
 Een alternatieve methode om de PyCIFRW module werkende te krijgen op Blender, zonder nood te hebben aan een Python3.7 installatie, is door de \textit{CifFile} map rechtstreeks in de Pythoninstallatiemap van Blender te plaatsen. De \textit{CifFile} kan gedownload worden vanaf de GitHub pagina van deze thesis: \url{https://github.com/JarritB/Thesis}
-\par
   
+\section{Inlezen van het bestand}
+
+\subsection{Controleren van het bestand}
+Vooraleer we het bestand kunnen omzetten met OpenBabel moeten we controleren of het gekozen bestand wel dergelijk een CIF-bestand is, dit zou anders voor problemen kunnen zorgen in het verdere verloop van het programma.
+\par
+Om dit te controleren moeten we nazien of ons bestand de extensie \textit{.cif} heeft, in sommige gevallen wordt de extensie met hoofdletters geschreven, hiermee dienen we dus ook rekening te houden. Omdat de bestandsnaam het volledige pad naar het bestand inhoudt moeten we enkel de vier laatste tekens overhouden. Dit wordt gedaan op lijn 725 van Listing[4.1].
+\par 
+De variabele \textit{ext} zal nu enkel de laatste vier tekens van de filenaam bevatten. Bij een cif bestand zullen deze laatste vier altijd \textit{.cif} zijn, we moeten de variabele dus hiermee vergelijken. Door de \textit{.lower()} methode op te roepen op de extensie zal deze altijd naar kleine letters worden omgezet, en hoeven we dus geen rekening te houden met hoofdletters. In het geval dat de extensie niet gelijk is aan \textit{.cif} gaan we een foutboodschap weergeven in de terminal en gaan we in de \textit{user\_feedback} variabele ook een boodschap zetten die zal verschijnen op onze add-on, deze variabele wordt later verder uitgelegd. Omdat er een fout bestand is ingegeven zal het programma beëindigd worden met een \textit{return}, het heeft geen zin dit bestand proberen te tekenen. In listing[4.1] wordt de controle van het bestand gedaan.
+\lstinputlisting[linerange={726-730},firstnumber=726,caption=Controle van de extensie]{listings/__init__.py}
+
+\subsection{Uitvoeren van OpenBabel}
+Nu we zeker weten dat we met een CIF-bestand te maken hebben kunnen we de inwendige symmetrie van het kristal wegwerken met OpenBabel. 
+\par
+Het oproepen van OpenBabel doen we met behulp van de \textit{subprocess} module van python. Wanneer we deze module oproepen zal er een nieuw process worden gestart, die in ons geval OpenBabel zal uitvoeren.
+\par
+Voor we de \textit{subprocess} module kunnen oproepen in ons script moeten we  deze importeren met de lijn code in Listing[4.2]
+
+\lstinputlisting[linerange={13-13},firstnumber=13,caption=Importeren van de subprocess module]{listings/__init__.py}
+
+Vooraleer we OpenBabel gaan oproepen gaan we controleren of OpenBabel wel geïnstalleerd is op ons systeem. Dit wordt gedaan met een \textit{try-except} blok, zie Listing[4.3], welke gaat proberen de code in het \textit{try} gedeelte uit te voeren. Als dit niet lukt zal het programma in plaats daarvan het \textit{except} gedeelte uitvoeren. Bij een correcte installatie van OpenBabel zal de \textit{obabel\_fill\_unit\_cell} functie worden uitgevoerd, zie lijn 735 van Listing[4.3].
+\par
+In het geval dat OpenBabel niet kan worden opgeroepen gaan we een foutboodschap weergeven in de terminal en in de \textit{user\_feedback} variabele en zal ons programma beëindigd worden met een \textit{return}. Het kristal zou deels kunnen getekend worden zonder OpenBabel maar de conversie die OpenBabel doet lost nog een ander probleem op. Omdat dit probleem grotendeels te maken heeft met het parsen van het bestand zal het besproken worden in de volgende sectie.
+
+\lstinputlisting[linerange={732-739},firstnumber=732,caption=Controle van de OpenBabel installatie]{listings/__init__.py}
+\par	
+De functie \textit{obabel\_fill\_unit\_cell} heeft het pad naar het ingevoerde CIF-bestan en de naam van het geconverteerde CIF-bestand als argumenten en bestaat uit slechts één lijn code. Op deze lijn roepen we de \textit{run} methode op de \textit{subprocess} module op, deze heeft als argument een \textit{string} waarin het uit te voeren commando staat zoals het in een prompt zou worden uitgevoerd. Het commando waarmee we OpenBabel uitvoeren bestaat uit volgende parameters:
+\begin{itemize}
+\item obabel: roept OpenBabel op
+\item -icif: type van het invoerbestand, wordt gevolgd door bestandsnaam
+\item -ocif: type van het uitvoerbestand
+\item -O: gevolgd door naam van het uitvoerbestand
+\item --fillUC: selecteert de mode waarin de symmetrie zal worden omgezet
+\item keepconnect: parameter van de fillUC mode, tekent ook atomen buiten de eenheidscel
+\end{itemize}
+In onze code ziet het dan als volgt uit:
+\lstinputlisting[linerange={671-671},firstnumber=671,caption=Uitvoeren van OpenBabel]{listings/__init__.py}
+
+\subsection{Parsen met PyCifRW}
+
+
+
+ 
+
+
+
+
+
