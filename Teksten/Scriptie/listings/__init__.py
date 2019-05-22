@@ -14,10 +14,11 @@ import subprocess
 import math
 from mathutils import Vector
 try:
-	from CifFile import CifFile
+    from CifFile import CifFile
+    pars_check = False
 except:
-	print("PyCIFRW not installed, try: pip install PyCifRW")
-	error_prog = True
+    print("PyCIFRW not installed, try: pip install PyCifRW")
+    pars_check = True
 try:
     import bpy
     Blender_env = True
@@ -29,7 +30,6 @@ except:
 # -------------------------------------------
 
 # global variables
-prog_error      =   False
 file_path       =   "Select a file" # path to CIF-file
 draw_bonds      =   False           # draws bonds between atoms
 draw_style      =   "SPACE FILLING" # sets draw style
@@ -149,46 +149,50 @@ class Operator(bpy.types.Operator):
 
     # Runs the whole program
     def execute(self, context):
-        global prog_error
-        if(not prog_error):
-            global user_feedback
-            if(file_path == "Select a file"):
-                print("No file selected")
-                user_feedback = "No File selected"
+        global pars_check
+        global user_feedback
+
+        if(pars_check):
+            user_feedback = "CiFFile module not installed"
+            return {'FINISHED'}
+
+        if(file_path == "Select a file"):
+            print("No file selected")
+            user_feedback = "No File selected"
+        else:
+            user_feedback = "Crystal drawn"
+
+            global draw_bonds
+            draw_bonds = context.scene.draw_bonds
+
+            global bond_distance
+            bond_distance = context.scene.bond_distance
+
+            global draw_lattice
+            draw_lattice = context.scene.draw_lattice
+
+            global atom_name
+            atom_name = context.scene.atom_name
+
+            global print_data
+            print_data = context.scene.print_data
+
+            global draw_style
+            global atom_color
+            draw_style = context.scene.style_selection_mode
+            if(draw_style=="SPACE FILLING"):
+                draw_bonds = False
+            if(draw_style=="STICK"):
+                draw_bonds = True
+                atom_color = False
             else:
-                user_feedback = "Crystal drawn"
+                atom_color = True
 
-                global draw_bonds
-                draw_bonds = context.scene.draw_bonds
-
-                global bond_distance
-                bond_distance = context.scene.bond_distance
-
-                global draw_lattice
-                draw_lattice = context.scene.draw_lattice
-
-                global atom_name
-                atom_name = context.scene.atom_name
-
-                global print_data
-                print_data = context.scene.print_data
-
-                global draw_style
-                global atom_color
-                draw_style = context.scene.style_selection_mode
-                if(draw_style=="SPACE FILLING"):
-                    draw_bonds = False
-                if(draw_style=="STICK"):
-                    draw_bonds = True
-                    atom_color = False
-                else:
-                    atom_color = True
-
-                global draw_quality
-                draw_quality = context.scene.quality_selection_mode
-                global add_camera
-                add_camera = context.scene.add_camera
-                drawCrystal(file_path)
+            global draw_quality
+            draw_quality = context.scene.quality_selection_mode
+            global add_camera
+            add_camera = context.scene.add_camera
+            drawCrystal(file_path)
 
 
         return {'FINISHED'}
@@ -733,16 +737,16 @@ def drawCrystal(file):
         # Convert the cif file to its P1 symmetry notation as a temporary cif file
         print('Converting %s to P1' %file)
         obabel_fill_unit_cell(file, "temp.CIF")
+        cf = CifFile("temp.CIF")
     except:
         print("No OpenBabel installation found, install it from http://openbabel.org/wiki/Category:Installation")
         user_feedback = "OpenBabel not installed"
-        return
+        cf = CifFile(file)
     # Open and parse our cif
-    cf = CifFile("temp.CIF")
     f = file.rsplit(dir_sep, 1)[-1]
     F = f[:3]
     print(f)
-    cb = cf["I"]
+    cb = cf.first_block()
     Crystal = Crysdata(F,cb)
 
     # Print crystal data in terminal if checked
