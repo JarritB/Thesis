@@ -22,7 +22,7 @@ De installatie van OpenBabel kan gevonden worden op hun webpagina: \url{http://o
 Na het volgen van de installatiewizard zou de OpenBabel GUI moeten geïnstalleerd zijn op ons systeem, en kan het gebruikt worden in ons programma. Dit zal in het verdere verloop van dit hoofdstuk worden uitgelegd.
 
 \subsection{PyCIFRW}
-Voor de PyCIFRW module op ons systeem te installeren hebben we nood aan een prompt waarop Pyhton3.7 kan worden uitgevoerd. Zo'n prompt kan verkregen worden door anaconda te installeren en gebruik te maken van \textit{Anaconda prompt}. Vervolgens hebben we de pip installer nodig voor Python en is automatisch aanwezig op Python3.7
+Voor de PyCIFRW module op ons systeem te installeren hebben we nood aan een prompt waarop Pyhton3.7 kan worden uitgevoerd. Zo'n prompt kan verkregen worden door Anaconda te installeren en gebruik te maken van \textit{Anaconda prompt}. Vervolgens hebben we de pip installer nodig voor Python en is automatisch aanwezig op Python3.7
 \par 
 Pip laat ons toe allerlei Python modules te installeren, waaronder de PyCIFRW module. Dit doen we met door volgend commando in te geven in het prompt:
 \begin{lstlisting}[caption=,numbers=none,language= bash]
@@ -151,7 +151,7 @@ Op lijn 612 van Listing[4.10] kennen we de getekende bol een naam toe, via deze 
 
 \subsection{Tekenen van bindingen}    
 
-In de \textit{BALL AND STICK} tekenstijl heeft de gebruiker de mogelijkheid om bindingen tussen atomen te tekenen, in de {STICK} tekenstijl zullen de bindingen steeds worden getekend terwijl deze nooit zullen getekend worden getekend in de {SPACE FILLING} tekenstijl. Het tekenen van bindingen wordt gedaan in de \textit{drawBonds} methode van de \textit{Crysdata} klasse. Deze methode zal in eerste instantie een béziercirkel tekenen en het de naam \textit{bez} toekennen, deze cirkel zal later gebruikt worden als vorm waarmee de \textit{bevel} zal worden gedaan, later hier meer over. Vervolgens gaan we de lijst van atomen doorlopen per element deze lijst nogmaals doorlopen, op deze manier kunnen we de afstand tussen elk element berekenen. Voor we deze afstand gaan berekenen gaan we eerst twee testen doen om te voorkomen dat het programma dubbel werk doet. Eerst gaan we na of de twee atomen dezelfde zijn, in dit geval zou het nutteloos zijn een binding te tekenen. De tweede test gaat in de lijst van getekende objecten kijken of er al een binding bestaat tussen deze twee atomen, zo vermijden we dat we de binding tweemaal tekenen. De \textit{bpy.data} module van de Blender API geeft ons toegang tot alle interne data van de Blender omgeving. Door \textit{bpy.data/objects} op te roepen krijgen we een dictionary waarin alle objecten kunnen worden opgeroepen aan de hand van hun ID. Doordat we onze bindingen een naam geven gebaseerd op de atomen die gebonden worden hebben we zo een manier om reeds bestaande bindingen te vinden.
+In de \textit{BALL AND STICK} tekenstijl heeft de gebruiker de mogelijkheid om bindingen tussen atomen te tekenen, in de {STICK} tekenstijl zullen de bindingen steeds worden getekend terwijl deze nooit zullen getekend worden getekend in de {SPACE FILLING} tekenstijl. Het tekenen van bindingen wordt gedaan in de \textit{drawBonds} methode van de \textit{Crysdata} klasse. Deze methode zal in eerste instantie een béziercirkel tekenen en het de naam \textit{bez} toekennen, deze cirkel zal gebruikt worden als vorm waarmee de \textit{bevel} zal worden gedaan, later hier meer over. Vervolgens gaan we de lijst van atomen doorlopen per element deze lijst nogmaals doorlopen, op deze manier kunnen we de afstand tussen elk element berekenen. Voor we deze afstand gaan berekenen gaan we eerst twee testen doen om te voorkomen dat het programma dubbel werk doet. Eerst gaan we na of de twee atomen dezelfde zijn, in dit geval zou het nutteloos zijn een binding te tekenen. De tweede test gaat in de lijst van getekende objecten kijken of er al een binding bestaat tussen deze twee atomen, zo vermijden we dat we de binding tweemaal tekenen. De \textit{bpy.data} module van de Blender API geeft ons toegang tot alle interne data van de Blender omgeving. Door \textit{bpy.data/objects} op te roepen krijgen we een dictionary waarin alle objecten kunnen worden opgeroepen aan de hand van hun ID. Doordat we onze bindingen een naam geven gebaseerd op de atomen die gebonden worden hebben we zo een manier om reeds bestaande bindingen te vinden.
 \par
 De gebruiker kan zelf de maximale afstand instellen die tussen twee atomen mag zijn om er een binding tussen te tekenen. De afstand tussen twee atomen gaan we berekenen met de formule:
 \[ d = \sqrt{(x_{a1}-x_{a2})^2+(y_{a1}-y_{a2})^2+(z_{a1}-z_{a2})^2}\]   
@@ -161,10 +161,10 @@ Enkel wanneer deze afstand kleiner is dan diegene die de gebruiker kiest moeten 
 
 \lstinputlisting[linerange={531-532},firstnumber=531,caption=]{listings/__init__.py}
 
-Eerst wordt er een curve aangemaakt. Deze krijgt de naam \textit{link} en het type \textit{CURVE} toegewezen. We zeggen ook meteen dat de curve driedimensionaal is, dit zorgt anders later voor problemen. Merk op dat we onze nieuwe curve niet in de lijst van objecten aanmaken, we creëren in feite een nieuwe vorm die we later als object kunnen aanmaken. 
+Eerst wordt er een \textit{curve}, of kromme,  aangemaakt. Deze krijgt de naam \textit{link} en het type \textit{CURVE} toegewezen. We zeggen ook meteen dat de kromme driedimensionaal is, dit zorgt anders later voor problemen. Merk op dat we onze nieuwe kromme niet in de lijst van objecten aanmaken, we creëren in feite een nieuwe vorm die we later als object kunnen aanmaken. 
 
 \lstinputlisting[linerange={533-533},firstnumber=533,caption=]{listings/__init__.py}
-Vervolgens gaan we nieuwe splines toevoegen aan onze curve. Splines zijn in feite lijnsegmenten waarmee een curve kan worden voorgesteld, in ons geval gaan we werken met slechts één spline die van het type \textit{bézier} is. Dit zal van onze curve een bézierkromme maken. Een bézierkromme is een manier waarop lijnen wiskundig kunnen worden voorgesteld aan de hand van twee of meer punten, die de graad van de 	bézierkromme bepalen volgens: $graad = n - 1$. Figuur[4.1] geeft een voorbeeld van een kromme die bepaald wordt door vier punten. Omdat we in ons geval enkel met rechte lijnstukken gaan werken volstaat een bézierkromme van de eerste graad en hoeven we niet dieper in te gaan op de wiskundige berekening van de vorm.
+Vervolgens gaan we nieuwe splines toevoegen aan onze kromme. Splines zijn in feite lijnsegmenten waarmee een kromme kan worden voorgesteld, in ons geval gaan we werken met slechts één spline die van het type \textit{bézier} is. Dit zal van onze kromme een bézierkromme maken. Een bézierkromme is een manier waarop lijnen wiskundig kunnen worden voorgesteld aan de hand van twee of meer punten, die de graad van de 	bézierkromme bepalen volgens: $graad = n - 1$. Figuur[4.1] geeft een voorbeeld van een kromme die bepaald wordt door vier punten. Omdat we in ons geval enkel met rechte lijnstukken gaan werken volstaat een bézierkromme van de eerste graad en hoeven we niet dieper in te gaan op de wiskundige berekening van de vorm.
 
 \begin{figure}[H]
 \begin{center}
@@ -181,11 +181,11 @@ We kennen onze bézierpunten toe aan variabelen zodat deze later makkelijk kunne
 
 \lstinputlisting[linerange={544-548},firstnumber=544,caption=]{listings/__init__.py}
 
-Nu gaan we van onze curve een object maken in de Blender omgeving. Aan zo een object kunnen we vervolgens \textit{modifiers} toevoegen aan dit object. In ons geval gaan we gebruikmaken van de \textit{hook modifier}, deze zal het object vasthechten aan een ander object. We maken een nieuwe \textit{hook modifier} aan en noemen deze \textit{alpha}. We hechten deze aan \textit{o1}, het eerste atoom, vast. Dit doen we vervolgens nogmaals voor \textit{o2}, het tweede atoom, en geven deze de naam \textit{beta}. Onze 'haken' hangen nu van aan onze atomen, maar nog niet aan onze curve.
+Nu gaan we van onze kromme een object maken in de Blender omgeving. Aan zo een object kunnen we vervolgens \textit{modifiers} toevoegen aan dit object. In ons geval gaan we gebruikmaken van de \textit{hook modifier}, deze zal het object vasthechten aan een ander object. We maken een nieuwe \textit{hook modifier} aan en noemen deze \textit{alpha}. We hechten deze aan \textit{o1}, het eerste atoom, vast. Dit doen we vervolgens nogmaals voor \textit{o2}, het tweede atoom, en geven deze de naam \textit{beta}. Onze 'haken' hangen nu van aan onze atomen, maar nog niet aan onze kromme.
 
 \lstinputlisting[linerange={550-553},firstnumber=550,caption=]{listings/__init__.py}  
 
-We gaan eerst onze curve toevoegen aan onze collectie, hierna kunnen we onze curve als actief object selecteren. Dit is nodig omdat we in de volgende lijn de tekenmode van Blender gaan veranderen naar de \textit{EDIT} mode. In deze mode worden alle hoekpunten van het actieve object zichtbaar en kan de geometrie van deze in meer detail worden aangepast. We zullen de \textit{EDIT} mode gebruiken zodat we in de volgende stap de twee bézierpunten van onze curve apart kunnen selecteren. 
+We gaan eerst onze kromme toevoegen aan onze collectie, hierna kunnen we onze kromme als actief object selecteren. Dit is nodig omdat we in de volgende lijn de tekenmode van Blender gaan veranderen naar de \textit{EDIT} mode. In deze mode worden alle hoekpunten van het actieve object zichtbaar en kan de geometrie van deze in meer detail worden aangepast. We zullen de \textit{EDIT} mode gebruiken zodat we in de volgende stap de twee bézierpunten van onze kromme apart kunnen selecteren. 
 
 \lstinputlisting[linerange={560-562},firstnumber=560,caption=]{listings/__init__.py}
 
@@ -202,17 +202,74 @@ beta                           & o2                          & p1
 \caption{Overzicht van de \textit{hook modifier}}
 \end{figure}
 
-Het vasthechten van objecten zal steeds gebeuren in het originepunt van een object. Als dit punt niet wordt verplaatst zal het zich steeds in het midden van een object bevinden. Hierdoor zal de curve steeds gebonden zijn aan het midden van de bollen.
+Het vasthechten van objecten zal steeds gebeuren in het originepunt van een object. Als dit punt niet wordt verplaatst zal het zich steeds in het midden van een object bevinden. Hierdoor zal de kromme steeds gebonden zijn aan het midden van de bollen.
 \par
-Hoewel we nu een curve hebben tussen onze atomen gaan we deze nog niet kunnen zien, omdat een curve geen volume heeft, zal deze niet zichtbaar zijn op het scherm. Er is nog één laatste stap die we moeten volgen om onze bindingen te tekenen, een \textit{bevel}.
+Hoewel we nu een kromme hebben getekend tussen onze atomen, gaan we deze nog niet kunnen zien. Omdat een kromme geen volume heeft, zal deze niet zichtbaar zijn op het scherm. Er is nog één laatste stap die we moeten volgen om onze bindingen te tekenen, een \textit{bevel}.
 
 \lstinputlisting[linerange={519-519},firstnumber=519,caption=]{listings/__init__.py}
 
-In het begin van deze sectie hebben we een béziercirkel getekend, deze    
+In het begin van deze sectie hebben we een béziercirkel, \textit{bez} getekend. Deze gaat nu van pas komen, we gaan namelijk een \textit{bevel} uitvoeren. Een \textit{bevel}, ook wel een \textit{sweep} genoemd, een term uit de wereld van het computertekenen die ruwweg betekend: een driedimensionale vorm creëren door een bepaalde vorm over een pad te extruderen. Op Figuur[3.4] wordt een \textit{bevel} gedaan van een cirkel over een recht lijnstuk waardoor een cilinder wordt gecreëerd. In realiteit zal er in Blender geen nieuw object worden aangemaakt bij een \textit{bevel}, het is een eigenschap van de kromme die het zijn driedimensionale structuur geeft.  
 
+\begin{figure}[H]
+\includegraphics[scale=0.6]{bevel.png}
+\caption{Eenvoudig voorbeeld van een \textit{bevel}}
+\end{figure}
 
+Nu we de binding succesvol kunnen tekenen hoeven we ze enkel nog een naam en kleur te geven. Voor de kleur van de bindingen gebruiken we wit, zo zijn ze duidelijk zichtbaar in het kristal.
 
+\section{Ontwerpen van een Blender add-on}
+
+\subsection{Add-on header}
+
+In onze code schrijven we een header, als een dictionary met de naam \textit{bl\_info}, waarin we de nodige informatie over de add-on zetten, zie Listing[4.12]. Figuur[4.4] toont aan hoe onze add-on wordt afgebeeld in de \textit{user\_preferences} is onder het \textit{add-on} tabblad. We merken op dat beide het \textit{name} en het \textit{category} veld van de header gebruikt wordt om de add-on initieel weer te geven. De andere velden worden pas zichtbaar als er op het pijltje linksboven wordt gedrukt. We moeten dus de naam en categorie van onze add-on dusdanig kiezen dat een gebruiker meteen weet waarvoor ze dient. 
+
+\lstinputlisting[linerange={103-110},firstnumber=103,caption=De bl\_info header van onze add-on]{listings/__init__.py}
+
+Als naam heb is er voor \textit{Crystallographic Drawing Tool for Blender}, afgekort naar \textit{CDTB}, gekozen. De catergorie spreekt voor zichzelf, en in de beschrijving van de add-on wordt er vermeld dat het programma met CIF-bestanden werkt. De locatie van de add-on is het \textit{View3D} venster, omdat hier het kristal zal  getekend worden.
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{add-on.png}
+\caption{Onze add-on afgebeeld in de \textit{user\_preferences}}
+\end{figure}
+
+\subsection{Schrijven van operatoren}
+
+Zoal in hoofdstuk drie wordt beschreven gaan we twee operatorklassen maken. Met de eerste operator willen we een bestandsbrowser openen waarin we het CIF-bestand kunnen selecteren dat we willen tekenen. 
+
+\lstinputlisting[linerange={129-132},firstnumber=129,caption=De invoke methode van de eerste operator]{listings/__init__.py}
+
+Deze klasse geven we een methode \textit{invoke}, zie Listing[4.13], deze zal ervoor zorgen dat wanneer de operator wordt uigevoerd er een filebrowser opent, met de \textit{return} op lijn 132 zorgt Blender ervoor dat deze operator blijft lopen zolang de bestandsbrowser is geopend. Wanneer we een bestand selecteren, zal de \textit{execute} methode het pad naar het bestand aan een globale variabele toekennen, zodat de leesbaar is vanuit heel het programma, en stopt de operator.
+\par 
+Bij het maken van de tweede operatorklasse komt iets meer kijken. Eerst moeten we alle attributen aanmaken die we later in het paneel willen kunnen aanpassen. Dit doen we in de \textit{register} methode, met behulp van de \textit{bpy.props} module. Met deze module gaan we de attributen aanmaken die moeten geïnterpreteerd worden door het paneel. Een voorbeeld van de creatie van zo een attribuut zien we in Listing[4.14].      
+
+\lstinputlisting[linerange={210-217},firstnumber=210,caption=Het initialiseren van het \textit{bond\_distance} attribuut ]{listings/__init__.py}
+
+Met het attribuut in Listing[4.14] zal de gebruiker de maximale bindingsafstand kunnen kiezen, omdat deze afstand een kommagetal mag zijn gebruiken we een \textit{FloatProperty}. Deze functie krijgt enkele argumenten meegegeven:
+
+\begin{itemize}
+\item name: de naam die in het paneel zal worden weergegeven
+\item description: een beschrijving van het attribuut welke te zien is als de cursor over het attribuut hangt
+\item default: de waarde die het attribuut heeft wanneer de add-on wordt ingeladen
+\item min/max: de uiterste waarde die de gebruiker kan invullen
+\item precision: het aantal getallen na de komma dat het attribuut kan hebben
+\end{itemize}  
+
+Wanneer het attribuut een \textit{IntProperty} of een \textit{BoolProperty} is zullen sommige van deze parameters, zoals de precisie, niet van toepassing zijn. Enumeraties werden in hoofdstuk drie reeds besproken, attributen van het type \textit{EnumProperty} kan enkel de waarde hebben van een van de elementen van de enumeratie die wordt meegegeven als parameter \textit{item}.
+\par
+De \textit{execute} methode van de tweede operator gaat aanvankelijk, net zoals de eerste operator, zijn attributen toekenen aan globale variabelen zodat ze leesbaar zijn vanuit heel het programma. Hierna roept de operator de functie \textit(drawCrystal) op, en zal de code die we bespraken in sectie twee en drie  worden uitgevoerd.  
+
+\subsection{Creëren van de user interface}
+Als link tussen onze add-on en de gebruiken gaan we gebruik maken van de \textit{Panel} klasse van Blender. Bij aanmaken van een paneel moeten we deze eerst enkele belangrijke attributen toekennen, zie Listing[4.15].
  
+\lstinputlisting[linerange={274-279},firstnumber=274,caption= Enkele belangrijke attributen van de paneelklasse ]{listings/__init__.py}
+
+Met deze attributen bepalen we hoe en waar we de add-on zal willen weergeven, en welke naam er bovenaan het paneel staat. In de \textit{draw} methode gaan we de layout van het paneel personaliseren. Om de add-on gebruiksvriendelijk te houden gaan we de opmaak van het paneel beperken tot enkele vakken, symbolen en gaan we geen specifieke kleuren toekennen.
+\par
+De paneelklasse heeft een attribuut \textit{layout} waarop we verschillende methodes kunnen oproepen. Telkens we zo een methode oproepen wordt er een onderdeel toegevoegd aan het paneel. Deze methodes kunnen we ook oproepen op de onderdelen van het paneel, zo kunnen we ze verder onderverdelen. Listing[4.16] toont een deel van de \textit{draw} methode waarin we het paneel opbouwen door een reeks van deze methodes in een bepaalde volgorde op te roepen. 
+
+\lstinputlisting[linerange={294-304},firstnumber=294,caption= Het opbouwen van een paneel]{listings/__init__.py}
+
+Op lijn 294 van Listing[4.16] maken we een vak aan met de \textit{box} methode, dit zal kader tekenen rond alles wat zich in dit vak bevindt. Vervolgens maken we rij aan 
 
 
 

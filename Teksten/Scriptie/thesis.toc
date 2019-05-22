@@ -73,4 +73,8 @@
 \contentsline {subsection}{\numberline {4.3.2}Tekenen van de omkadering}{38}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Tekenen van atomen}{40}{subsection.4.3.3}
 \contentsline {subsection}{\numberline {4.3.4}Tekenen van bindingen}{41}{subsection.4.3.4}
-\contentsline {chapter}{Bibliografie}{45}{chapter*.23}
+\contentsline {section}{\numberline {4.4}Ontwerpen van een Blender add-on}{45}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Add-on header}{45}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Schrijven van operatoren}{46}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Cre\IeC {\"e}ren van de user interface}{47}{subsection.4.4.3}
+\contentsline {chapter}{Bibliografie}{49}{chapter*.25}
