@@ -41,7 +41,7 @@
 \contentsline {subsection}{\numberline {2.5.5}Andere opmerkelijke tools in Blender}{20}{subsection.2.5.5}
 \contentsline {subsection}{\numberline {2.5.6}Scripten in Blender met de Blender API}{21}{subsection.2.5.6}
 \contentsline {section}{\numberline {2.6}Conclusie}{22}{section.2.6}
-\contentsline {chapter}{\numberline {3}Ontwerpproces}{23}{chapter.3}
+\contentsline {chapter}{\numberline {3}Algemeen ontwerpproces}{23}{chapter.3}
 \contentsline {section}{\numberline {3.1}Omvormen van het invoersbestand}{23}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Symmetrieoperaties in het CIF-formaat}{23}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}OpenBabel}{24}{subsection.3.1.2}
@@ -59,7 +59,7 @@
 \contentsline {subsection}{\numberline {3.4.3}Operatoren}{29}{subsection.3.4.3}
 \contentsline {subsection}{\numberline {3.4.4}Panelen}{29}{subsection.3.4.4}
 \contentsline {section}{\numberline {3.5}Conclusie}{31}{section.3.5}
-\contentsline {chapter}{\numberline {4}Werking van het programma}{32}{chapter.4}
+\contentsline {chapter}{\numberline {4}Gedetailleerd ontwerpproces}{32}{chapter.4}
 \contentsline {section}{\numberline {4.1}Installatie van externe programma's}{32}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}OpenBabel}{33}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}PyCIFRW}{33}{subsection.4.1.2}
@@ -70,11 +70,16 @@
 \contentsline {subsection}{\numberline {4.2.4}Parsen met PyCifRW}{36}{subsection.4.2.4}
 \contentsline {section}{\numberline {4.3}Tekenen in Blender}{38}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Programmeren met de Blender API}{38}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Tekenen van de omkadering}{38}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.2}Tekenen van de omkadering}{39}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Tekenen van atomen}{40}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Tekenen van bindingen}{41}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.4}Tekenen van bindingen}{42}{subsection.4.3.4}
 \contentsline {section}{\numberline {4.4}Ontwerpen van een Blender add-on}{45}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Add-on header}{45}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Schrijven van operatoren}{46}{subsection.4.4.2}
 \contentsline {subsection}{\numberline {4.4.3}Cre\IeC {\"e}ren van de user interface}{47}{subsection.4.4.3}
-\contentsline {chapter}{Bibliografie}{49}{chapter*.25}
+\contentsline {section}{\numberline {4.5}Conclusie}{49}{section.4.5}
+\contentsline {chapter}{\numberline {5}Testen en Resultaten}{52}{chapter.5}
+\contentsline {section}{\numberline {5.1}Gebruiken van de add-on}{52}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Stap 1: Blender downloaden}{52}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}\IeC {\textbullet }}{53}{section.5.2}
+\contentsline {chapter}{Bibliografie}{54}{chapter*.27}

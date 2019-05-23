@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.30)  22 MAY 2019 18:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.30)  23 MAY 2019 18:40
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1367,7 +1367,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 
 pdfTeX warning: pdflatex (file ./private/cover_fiiw_denayer.pdf): PDF inclusion
 : found PDF version <1.7>, but at most version <1.5> allowed
-<private/cover_fiiw_denayer.pdf, id=126, pagebox=cropbox, 597.55246pt x 845.077
+<private/cover_fiiw_denayer.pdf, id=142, pagebox=cropbox, 597.55246pt x 845.077
 18pt>
 File: private/cover_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/cover_fiiw_denayer.pdf>
@@ -1684,7 +1684,7 @@ LaTeX Font Info:    Try loading font information for U+psy on input line 37.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\upsy.fd"
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 )
-<fig/roosterruimte.png, id=278, 724.95844pt x 546.54187pt>
+<fig/roosterruimte.png, id=302, 724.95844pt x 546.54187pt>
 File: fig/roosterruimte.png Graphic file (type png)
 <use fig/roosterruimte.png>
 Package pdftex.def Info: fig/roosterruimte.png  used on input line 40. on input
@@ -1700,7 +1700,7 @@ Package babel Info: Redefining dutch shorthand "|
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 46.
  [6]
-<fig/families.png, id=291, 770.88pt x 308.65312pt>
+<fig/families.png, id=315, 770.88pt x 308.65312pt>
 File: fig/families.png Graphic file (type png)
 <use fig/families.png>
 Package pdftex.def Info: fig/families.png  used on input line 51. on input line
@@ -1721,7 +1721,7 @@ Package babel Info: Redefining dutch shorthand "|
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 54.
 [7 <./fig/roosterruimte.png>]
-<fig/Bravais.png, id=300, 574.39594pt x 274.02374pt>
+<fig/Bravais.png, id=324, 574.39594pt x 274.02374pt>
 File: fig/Bravais.png Graphic file (type png)
 <use fig/Bravais.png>
 Package pdftex.def Info: fig/Bravais.png  used on input line 68. on input line 
@@ -1746,7 +1746,7 @@ Package babel Info: Redefining dutch shorthand "|
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 83.
  [9 <./fig/Bravais.png>]
-<fig/FractionalExample.png, id=312, 381.67593pt x 322.20375pt>
+<fig/FractionalExample.png, id=336, 381.67593pt x 322.20375pt>
 File: fig/FractionalExample.png Graphic file (type png)
 <use fig/FractionalExample.png>
 Package pdftex.def Info: fig/FractionalExample.png  used on input line 88. on i
@@ -1810,7 +1810,7 @@ Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 201.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 201.
-<fig/VESTA-UI.png, id=382, 1445.4pt x 775.39688pt>
+<fig/VESTA-UI.png, id=406, 1445.4pt x 775.39688pt>
 File: fig/VESTA-UI.png Graphic file (type png)
 <use fig/VESTA-UI.png>
 Package pdftex.def Info: fig/VESTA-UI.png  used on input line 207. on input lin
@@ -1831,7 +1831,7 @@ Package babel Info: Redefining dutch shorthand "|
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 210.
 [14]
-<fig/Crystalviewer9-UI.png, id=389, 1445.4pt x 775.39688pt>
+<fig/Crystalviewer9-UI.png, id=413, 1445.4pt x 775.39688pt>
 File: fig/Crystalviewer9-UI.png Graphic file (type png)
 <use fig/Crystalviewer9-UI.png>
 Package pdftex.def Info: fig/Crystalviewer9-UI.png  used on input line 218. on 
@@ -1847,7 +1847,7 @@ Package babel Info: Redefining dutch shorthand "|
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 224.
  [15 <./fig/VESTA-UI.png> <./fig/Crystalviewer9-UI.png>]
-<fig/Olex2-UI.png, id=395, 1445.4pt x 813.0375pt>
+<fig/Olex2-UI.png, id=419, 1445.4pt x 813.0375pt>
 File: fig/Olex2-UI.png Graphic file (type png)
 <use fig/Olex2-UI.png>
 Package pdftex.def Info: fig/Olex2-UI.png  used on input line 226. on input lin
@@ -1886,7 +1886,7 @@ Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 251.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 251.
-<fig/next-gen-poster.png, id=426, 246.6816pt x 138.7584pt>
+<fig/next-gen-poster.png, id=450, 246.6816pt x 138.7584pt>
 File: fig/next-gen-poster.png Graphic file (type png)
 <use fig/next-gen-poster.png>
 Package pdftex.def Info: fig/next-gen-poster.png  used on input line 261. on in
@@ -1902,7 +1902,7 @@ Package babel Info: Redefining dutch shorthand "|
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 271.
  [18 <./fig/next-gen-poster.png>]
-<fig/Blender.png, id=443, 1445.4pt x 775.39688pt>
+<fig/Blender.png, id=467, 1445.4pt x 775.39688pt>
 File: fig/Blender.png Graphic file (type png)
 <use fig/Blender.png>
 Package pdftex.def Info: fig/Blender.png  used on input line 273. on input line
@@ -1923,7 +1923,7 @@ Package babel Info: Redefining dutch shorthand "|
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 292.
 [19 <./fig/Blender.png>]
-<fig/blenderreal.png, id=451, 752.8125pt x 565.11125pt>
+<fig/blenderreal.png, id=475, 752.8125pt x 565.11125pt>
 File: fig/blenderreal.png Graphic file (type png)
 <use fig/blenderreal.png>
 Package pdftex.def Info: fig/blenderreal.png  used on input line 294. on input 
@@ -1960,7 +1960,7 @@ Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 336.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 336.
-[21]) (Ontwerpproces.tex
+[21]) (Algemeen.tex
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 8.
 Package babel Info: Redefining dutch shorthand "~
@@ -1990,7 +1990,7 @@ Package babel Info: Redefining dutch shorthand "~
 [23
 
 ]
-<fig/OpenBabelGUI.png, id=479, 1156.32pt x 620.91975pt>
+<fig/OpenBabelGUI.png, id=503, 1156.32pt x 620.91975pt>
 File: fig/OpenBabelGUI.png Graphic file (type png)
 <use fig/OpenBabelGUI.png>
 Package pdftex.def Info: fig/OpenBabelGUI.png  used on input line 32. on input 
@@ -2010,7 +2010,7 @@ Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 40.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 40.
-<fig/ClassDiagramEz.png, id=487, 376.40625pt x 374.90062pt>
+<fig/ClassDiagramEz.png, id=511, 376.40625pt x 374.90062pt>
 File: fig/ClassDiagramEz.png Graphic file (type png)
 <use fig/ClassDiagramEz.png>
 Package pdftex.def Info: fig/ClassDiagramEz.png  used on input line 48. on inpu
@@ -2052,7 +2052,7 @@ Package babel Info: Redefining dutch shorthand "|
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 76.
  [27]
-<fig/getekend.png, id=506, 1580.90625pt x 550.30594pt>
+<fig/getekend.png, id=530, 1580.90625pt x 550.30594pt>
 File: fig/getekend.png Graphic file (type png)
 <use fig/getekend.png>
 Package pdftex.def Info: fig/getekend.png  used on input line 80. on input line
@@ -2081,7 +2081,7 @@ Package babel Info: Redefining dutch shorthand "|
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 103.
  [29]
-<fig/paneel.png, id=522, 312.56775pt x 428.19975pt>
+<fig/paneel.png, id=546, 312.56775pt x 428.19975pt>
 File: fig/paneel.png Graphic file (type png)
 <use fig/paneel.png>
 Package pdftex.def Info: fig/paneel.png  used on input line 107. on input line 
@@ -2108,7 +2108,7 @@ Overfull \hbox (10.68304pt too wide) in paragraph at lines 120--121
 an een con-ver-sie-ma-trix die de frac-ti-o-nele co[]ordinaten
  []
 
-) (Programmastructuur.tex
+) (Gedetailleerd.tex
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 8.
 Package babel Info: Redefining dutch shorthand "~
@@ -2128,13 +2128,13 @@ Package babel Info: Redefining dutch shorthand "|
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 16.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 21.
+(babel)             in language  on input line 18.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 21.
+(babel)             in language  on input line 18.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 21.
+(babel)             in language  on input line 18.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 21.
+(babel)             in language  on input line 18.
 [32
 
 ]
@@ -2152,69 +2152,70 @@ File: omlphv.fd
 LaTeX Font Info:    Font shape `OML/phv/m/n' in size <10.95> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 38.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 43.
+(babel)             in language  on input line 42.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 43.
+(babel)             in language  on input line 42.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 42.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 47.
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 47.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 42.
  [33]
-(listings/__init__.py) (listings/__init__.py)
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 43.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 64.
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 64.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 64.
- [34] (listings/__init__.py)
+(babel)             in language  on input line 43.
+
 (listings/__init__.py)
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 79.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 79.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 79.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 79.
- [35] (listings/__init__.py)
+(babel)             in language  on input line 60.
+ [34] (listings/__init__.py) (listings/__init__.py)
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 96.
+(babel)             in language  on input line 77.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 96.
+(babel)             in language  on input line 77.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 96.
+(babel)             in language  on input line 77.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 96.
+(babel)             in language  on input line 77.
+
+[35] (listings/__init__.py) (listings/__init__.py)
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 92.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 92.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 92.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 92.
  [36] (listings/__init__.py)
 (listings/__init__.py
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 655.
+(babel)             in language  on input line 650.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 655.
+(babel)             in language  on input line 650.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 655.
+(babel)             in language  on input line 650.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 655.
+(babel)             in language  on input line 650.
  [37])
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 111.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 111.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 126.
+(babel)             in language  on input line 123.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 126.
+(babel)             in language  on input line 123.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 126.
+(babel)             in language  on input line 123.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 126.
+(babel)             in language  on input line 123.
  [38] (listings/__init__.py)
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 131.
@@ -2227,13 +2228,13 @@ Package babel Info: Redefining dutch shorthand "~
  [39]
 (listings/__init__.py) (listings/__init__.py
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 621.
+(babel)             in language  on input line 616.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 621.
+(babel)             in language  on input line 616.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 621.
+(babel)             in language  on input line 616.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 621.
+(babel)             in language  on input line 616.
  [40])
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 141.
@@ -2250,33 +2251,35 @@ Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 155.
 
 [41] (listings/__init__.py) (listings/__init__.py)
-<fig/bezier.png, id=687, 271.0125pt x 112.92188pt>
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 168.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 168.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 168.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 168.
+ [42]
+<fig/bezier.png, id=721, 271.0125pt x 112.92188pt>
 File: fig/bezier.png Graphic file (type png)
 <use fig/bezier.png>
 Package pdftex.def Info: fig/bezier.png  used on input line 171. on input line 
 171.
 Package pdftex.def Info: Requested size: 271.01183pt x 112.92159pt on input lin
 e 171.
+ (listings/__init__.py)
+(listings/__init__.py) (listings/__init__.py)
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 175.
+(babel)             in language  on input line 189.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 175.
+(babel)             in language  on input line 189.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 175.
+(babel)             in language  on input line 189.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 175.
- [42] (listings/__init__.py)
-(listings/__init__.py) (listings/__init__.py) (listings/__init__.py
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 561.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 561.
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 561.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 561.
- [43 <./fig/bezier.png>])
-<fig/hookmod.png, id=722, 602.25pt x 267.24844pt>
+(babel)             in language  on input line 189.
+ [43 <./fig/bezier.png>]
+(listings/__init__.py)
+<fig/hookmod.png, id=746, 602.25pt x 267.24844pt>
 File: fig/hookmod.png Graphic file (type png)
 <use fig/hookmod.png>
 Package pdftex.def Info: fig/hookmod.png  used on input line 195. on input line
@@ -2284,7 +2287,7 @@ Package pdftex.def Info: fig/hookmod.png  used on input line 195. on input line
 Package pdftex.def Info: Requested size: 240.89572pt x 106.89748pt on input lin
 e 195.
  (listings/__init__.py)
-<fig/bevel.png, id=723, 312.41719pt x 393.72093pt>
+<fig/bevel.png, id=747, 312.41719pt x 393.72093pt>
 File: fig/bevel.png Graphic file (type png)
 <use fig/bevel.png>
 Package pdftex.def Info: fig/bevel.png  used on input line 214. on input line 2
@@ -2315,7 +2318,7 @@ Package babel Info: Redefining dutch shorthand "|
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 226.
  [45 <./fig/bevel.png>]
-<fig/add-on.png, id=750, 470.9595pt x 91.542pt>
+<fig/add-on.png, id=774, 470.9595pt x 91.542pt>
 File: fig/add-on.png Graphic file (type png)
 <use fig/add-on.png>
 Package pdftex.def Info: fig/add-on.png  used on input line 231. on input line 
@@ -2342,16 +2345,108 @@ Package babel Info: Redefining dutch shorthand "|
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 269.
  [47]
-(listings/__init__.py)) (thesis.bbl
+(listings/__init__.py)
+<fig/opbouw.png, id=807, 335.00156pt x 422.32782pt>
+File: fig/opbouw.png Graphic file (type png)
+<use fig/opbouw.png>
+Package pdftex.def Info: fig/opbouw.png  used on input line 276. on input line 
+276.
+Package pdftex.def Info: Requested size: 201.00247pt x 253.39864pt on input lin
+e 276.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 280.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 280.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 280.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 280.
  [48]
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 286.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 286.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 292.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 292.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 292.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 292.
+ [49 <./fig/opbouw.png>]
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 307.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 307.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 307.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 307.
+ [50]) (Resultaten.tex
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 8.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 8.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 8.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 8.
+
+[51]
+Hoofdstuk 5.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 8.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 8.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 19.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 19.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 26.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 26.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 26.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 26.
+[52
+
+]
+Overfull \hbox (6.4536pt too wide) in paragraph at lines 27--28
+[]\OT1/phv/m/n/10.95 Blender kan ge-down-load wor-den op de down-lo-ad-pa-gina 
+van hun offi[]ele web-site:[]$\OT1/pcr/m/n/10.95 https : / / builder .
+ []
+
+<fig/b_download.png, id=843, 478.78876pt x 298.11375pt>
+File: fig/b_download.png Graphic file (type png)
+<use fig/b_download.png>
+Package pdftex.def Info: fig/b_download.png  used on input line 31. on input li
+ne 31.
+Package pdftex.def Info: Requested size: 239.39378pt x 149.0565pt on input line
+ 31.
+
+LaTeX Font Warning: Font shape `OMS/phv/bx/n' undefined
+(Font)              using `OMS/phv/m/n' instead
+(Font)              for symbol `textbullet' on input line 39.
+
+LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <14.4> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 39.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 39.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 39.
+) (thesis.bbl
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 1.
+ [53 <./fig/b_download.png>]
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining dutch shorthand "~
@@ -2370,7 +2465,7 @@ Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 85.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 85.
-[49
+[54
 
 ]) (bijlage1.tex
 Package babel Info: Redefining dutch shorthand "|
@@ -2381,28 +2476,28 @@ Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 1.
- [50])
+ [55])
 
 pdfTeX warning: pdflatex (file ./private/back_fiiw_denayer.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
-<private/back_fiiw_denayer.pdf, id=826, pagebox=cropbox, 597.55246pt x 845.0771
+<private/back_fiiw_denayer.pdf, id=876, pagebox=cropbox, 597.55246pt x 845.0771
 8pt>
 File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf>
-Package pdftex.def Info: private/back_fiiw_denayer.pdf  used on input line 128.
- on input line 128.
+Package pdftex.def Info: private/back_fiiw_denayer.pdf  used on input line 130.
+ on input line 130.
 Package pdftex.def Info: Requested size: 597.551pt x 845.07512pt on input line 
-128.
+130.
 
 
 pdfTeX warning: pdflatex (file ./private/back_fiiw_denayer.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
 File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf>
-Package pdftex.def Info: private/back_fiiw_denayer.pdf  used on input line 128.
- on input line 128.
+Package pdftex.def Info: private/back_fiiw_denayer.pdf  used on input line 130.
+ on input line 130.
 Package pdftex.def Info: Requested size: 597.551pt x 845.07512pt on input line 
-128.
+130.
 
 
 pdfTeX warning: pdflatex (file ./private/back_fiiw_denayer.pdf): PDF inclusion:
@@ -2411,86 +2506,86 @@ pdfTeX warning: pdflatex (file ./private/back_fiiw_denayer.pdf): PDF inclusion:
 
 pdfTeX warning: pdflatex (file ./private/back_fiiw_denayer.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
-<private/back_fiiw_denayer.pdf, id=829, page=1, pagebox=cropbox, 597.55246pt x 
+<private/back_fiiw_denayer.pdf, id=879, page=1, pagebox=cropbox, 597.55246pt x 
 845.07718pt>
 File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf, page 1>
 Package pdftex.def Info: private/back_fiiw_denayer.pdf , page1 used on input li
-ne 128. on input line 128.
+ne 130. on input line 130.
 Package pdftex.def Info: Requested size: 597.551pt x 845.07512pt on input line 
-128.
+130.
 File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf, page 1>
 Package pdftex.def Info: private/back_fiiw_denayer.pdf , page1 used on input li
-ne 128. on input line 128.
+ne 130. on input line 130.
 Package pdftex.def Info: Requested size: 597.57834pt x 845.1138pt on input line
- 128.
+ 130.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 130.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 130.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 130.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 128.
-[51
+(babel)             in language  on input line 130.
+[56
 
 ]
 File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf, page 1>
 Package pdftex.def Info: private/back_fiiw_denayer.pdf , page1 used on input li
-ne 128. on input line 128.
+ne 130. on input line 130.
 Package pdftex.def Info: Requested size: 597.57834pt x 845.1138pt on input line
- 128.
+ 130.
 File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf, page 1>
 Package pdftex.def Info: private/back_fiiw_denayer.pdf , page1 used on input li
-ne 128. on input line 128.
+ne 130. on input line 130.
 Package pdftex.def Info: Requested size: 597.57834pt x 845.1138pt on input line
- 128.
+ 130.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 130.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 130.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 130.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 130.
 File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf, page 1>
 Package pdftex.def Info: private/back_fiiw_denayer.pdf , page1 used on input li
-ne 128. on input line 128.
+ne 130. on input line 130.
 Package pdftex.def Info: Requested size: 597.57834pt x 845.1138pt on input line
- 128.
- [52 <./private/back_fiiw_denayer.pdf>]
-<fig/Grantt.png, id=847, 917.67844pt x 399.74344pt>
+ 130.
+ [57 <./private/back_fiiw_denayer.pdf>]
+<fig/Grantt.png, id=897, 917.67844pt x 399.74344pt>
 File: fig/Grantt.png Graphic file (type png)
 <use fig/Grantt.png>
-Package pdftex.def Info: fig/Grantt.png  used on input line 130. on input line 
-130.
+Package pdftex.def Info: fig/Grantt.png  used on input line 132. on input line 
+132.
 Package pdftex.def Info: Requested size: 426.80008pt x 185.91536pt on input lin
-e 130.
+e 132.
 
 
 pdfTeX warning: pdflatex (file ./checklist.pdf): PDF inclusion: found PDF versi
 on <1.7>, but at most version <1.5> allowed
-<checklist.pdf, id=848, pagebox=cropbox, 597.50786pt x 845.04686pt>
+<checklist.pdf, id=898, pagebox=cropbox, 597.50786pt x 845.04686pt>
 File: checklist.pdf Graphic file (type pdf)
 <use checklist.pdf>
-Package pdftex.def Info: checklist.pdf  used on input line 131. on input line 1
-31.
+Package pdftex.def Info: checklist.pdf  used on input line 133. on input line 1
+33.
 Package pdftex.def Info: Requested size: 597.5064pt x 845.0448pt on input line 
-131.
+133.
 
 
 pdfTeX warning: pdflatex (file ./checklist.pdf): PDF inclusion: found PDF versi
 on <1.7>, but at most version <1.5> allowed
 File: checklist.pdf Graphic file (type pdf)
 <use checklist.pdf>
-Package pdftex.def Info: checklist.pdf  used on input line 131. on input line 1
-31.
+Package pdftex.def Info: checklist.pdf  used on input line 133. on input line 1
+33.
 Package pdftex.def Info: Requested size: 597.5064pt x 845.0448pt on input line 
-131.
+133.
 
 
 pdfTeX warning: pdflatex (file ./checklist.pdf): PDF inclusion: found PDF versi
@@ -2499,79 +2594,83 @@ on <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex (file ./checklist.pdf): PDF inclusion: found PDF versi
 on <1.7>, but at most version <1.5> allowed
-<checklist.pdf, id=851, page=1, pagebox=cropbox, 597.50786pt x 845.04686pt>
+<checklist.pdf, id=901, page=1, pagebox=cropbox, 597.50786pt x 845.04686pt>
 File: checklist.pdf Graphic file (type pdf)
 <use checklist.pdf, page 1>
-Package pdftex.def Info: checklist.pdf , page1 used on input line 131. on input
- line 131.
+Package pdftex.def Info: checklist.pdf , page1 used on input line 133. on input
+ line 133.
 Package pdftex.def Info: Requested size: 597.5064pt x 845.0448pt on input line 
-131.
+133.
 File: checklist.pdf Graphic file (type pdf)
 <use checklist.pdf, page 1>
-Package pdftex.def Info: checklist.pdf , page1 used on input line 131. on input
- line 131.
+Package pdftex.def Info: checklist.pdf , page1 used on input line 133. on input
+ line 133.
 Package pdftex.def Info: Requested size: 597.53374pt x 845.08348pt on input lin
-e 131.
+e 133.
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--131
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 131.
+(babel)             in language  on input line 133.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 131.
+(babel)             in language  on input line 133.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 131.
+(babel)             in language  on input line 133.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 131.
-[53
+(babel)             in language  on input line 133.
+[58
 
  <./fig/Grantt.png>]
 File: checklist.pdf Graphic file (type pdf)
 <use checklist.pdf, page 1>
-Package pdftex.def Info: checklist.pdf , page1 used on input line 131. on input
- line 131.
+Package pdftex.def Info: checklist.pdf , page1 used on input line 133. on input
+ line 133.
 Package pdftex.def Info: Requested size: 597.53374pt x 845.08348pt on input lin
-e 131.
+e 133.
 File: checklist.pdf Graphic file (type pdf)
 <use checklist.pdf, page 1>
-Package pdftex.def Info: checklist.pdf , page1 used on input line 131. on input
- line 131.
+Package pdftex.def Info: checklist.pdf , page1 used on input line 133. on input
+ line 133.
 Package pdftex.def Info: Requested size: 597.53374pt x 845.08348pt on input lin
-e 131.
+e 133.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 131.
+(babel)             in language  on input line 133.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 131.
+(babel)             in language  on input line 133.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 131.
+(babel)             in language  on input line 133.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 131.
+(babel)             in language  on input line 133.
 File: checklist.pdf Graphic file (type pdf)
 <use checklist.pdf, page 1>
-Package pdftex.def Info: checklist.pdf , page1 used on input line 131. on input
- line 131.
+Package pdftex.def Info: checklist.pdf , page1 used on input line 133. on input
+ line 133.
 Package pdftex.def Info: Requested size: 597.53374pt x 845.08348pt on input lin
-e 131.
- [54 <./checklist.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 135.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 135.
+e 133.
+ [59 <./checklist.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
  (thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 135.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 135.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 137.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 137.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 4E44D21A45667000C16FB063F3F6D5BD;1982.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 135.
+(rerunfilecheck)             Checksum: 59D54354EE23E71E17E8D460DE3687F9;2230.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 137.
  ) 
 Here is how much of TeX's memory you used:
- 15181 strings out of 493312
- 221806 string characters out of 3138895
- 680805 words of memory out of 3000000
- 17978 multiletter control sequences out of 15000+200000
- 57312 words of font info for 99 fonts, out of 3000000 for 9000
+ 15213 strings out of 493312
+ 222283 string characters out of 3138895
+ 667250 words of memory out of 3000000
+ 17993 multiletter control sequences out of 15000+200000
+ 57569 words of font info for 100 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,18n,53p,1598b,1893s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,18n,53p,1567b,1893s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
@@ -2583,9 +2682,9 @@ ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:
 ng/MiKTeX/2.9/fonts/type1/urw/symbol/usyr.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on thesis.pdf (61 pages, 3532247 bytes).
+Output written on thesis.pdf (66 pages, 3647850 bytes).
 PDF statistics:
- 987 PDF objects out of 1000 (max. 8388607)
- 388 named destinations out of 1000 (max. 500000)
- 389 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1039 PDF objects out of 1200 (max. 8388607)
+ 400 named destinations out of 1000 (max. 500000)
+ 431 words of extra memory for PDF output out of 10000 (max. 10000000)
 

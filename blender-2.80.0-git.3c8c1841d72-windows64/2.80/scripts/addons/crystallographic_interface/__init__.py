@@ -42,6 +42,7 @@ bond_radius     =   0.05            # radius of bond
 add_camera	    =	True			# render final image
 atom_color		=	True			# draw atoms in color
 user_feedback   =   ""              # feedback for the user
+print_data      =   True
 
 
 # dictionaries
@@ -83,7 +84,7 @@ sizedic         =   {
 
 path = os.path.dirname(os.path.realpath(__file__))
 # dictionary which couples atoms to a color
-# Color scheme following the CPK convention was extracted from https://en.wikipedia.org/wiki/CPK_coloring#Typical_assignments
+# Color scheme, in RGB percentages, following the CPK convention was extracted from https://en.wikipedia.org/wiki/CPK_coloring#Typical_assignments
 # data can be changed by modifying the values in colordic.txt
 with open(path+dir_sep+'colordic.txt','r') as inf:
     colordic = eval(inf.read())
@@ -91,7 +92,7 @@ with open(path+dir_sep+'colordic.txt','r') as inf:
 # dictionary which couples atoms to a specific size
 # Atom data, in Ångström, was extracted from https://en.wikipedia.org/wiki/Atomic_radii_of_the_elements_(data_page)
 # data can be changed by modifying the values in sizedic.txt
-with open(path+dir_sep+'\\sizedic.txt','r') as inf:
+with open(path+dir_sep+'sizedic.txt','r') as inf:
     sizedic = eval(inf.read())
 
 
@@ -180,8 +181,6 @@ class Operator(bpy.types.Operator):
             global draw_style
             global atom_color
             draw_style = context.scene.style_selection_mode
-            if(draw_style=="SPACE FILLING"):
-                draw_bonds = False
             if(draw_style=="STICK"):
                 draw_bonds = True
                 atom_color = False
@@ -277,13 +276,11 @@ class Panel(bpy.types.Panel):
     bl_region_type = "TOOLS"
     bl_context = "objectmode"
     bl_category = "CDTB"
-    bl_ui_units_x = 50
 
     def draw(self,context):
 
         scn = context.scene
         layout = self.layout
-        layout.ui_units_x = 15
         layout.label(text = 'Input file',icon_value=112)
 
         '''
@@ -297,7 +294,7 @@ class Panel(bpy.types.Panel):
         left_col = splitrow.column()
         right_col = splitrow.column()
         left_col.operator('error.scan_file',icon_value=108,text="")
-        right_col.label(text=file_path.rsplit(dir_sep, 2)[-1])
+        right_col.label(text=file_path.rsplit('\\', 2)[-1])
         layout.label(text = 'Settings',icon_value =117)
         box = layout.box()
         box.prop(scn,'draw_bonds')
@@ -502,6 +499,8 @@ class Crysdata():
                 if atom != target:
                     if("bond{}-{}".format(target.elid,atom.elid)in bpy.data.objects):
                         continue
+                    if(atom.sym == 'H' and target.sym == 'H'):
+                        continue
                     if calcDistance(self.ftoc,atom,target) <= bond_distance:
                         self.makeBond(atom,target)
                         cnt += 1
@@ -616,7 +615,7 @@ class Atom():
         if(atom_name):
             bpy.context.object.show_name = True
         if(atom_color):
-            bpy.context.object.active_material.diffuse_color = colordic[self.sym] # change color to dictiomary color
+            bpy.context.object.active_material.diffuse_color = colordic[self.sym] # change color to dictionary color
         else:
             bpy.context.object.active_material.diffuse_color = [1,1,1] # change color to white
 
@@ -690,13 +689,16 @@ def toCarth(ftoc,V_frac):
 
     return np.dot(ftoc, V_frac)
 
+
 def look_at(obj_camera, point):
+
     loc_camera = obj_camera.matrix_world.to_translation()
     direction = point - loc_camera
     # point the cameras '-Z' and use its 'Y' as up
     rot_quat = direction.to_track_quat('-Z', 'Y')
     # assume we're using euler rotation
     obj_camera.rotation_euler = rot_quat.to_euler()
+
 
 def addCamera(x,y,z):
 
@@ -707,9 +709,6 @@ def addCamera(x,y,z):
     look_at(obj_camera, Vector([0,0,z/4]))
     obj_camera.data.type = 'ORTHO'
     obj_camera.data.ortho_scale = ((x+y+z))
-
-
-
 
 
 def clearWS():
@@ -723,6 +722,7 @@ def clearWS():
         bpy.data.curves.remove(i)
     print("Workspace cleared.")
     return
+
 
 def drawCrystal(file):
     # Check if file is file:
@@ -741,7 +741,8 @@ def drawCrystal(file):
     except:
         print("No OpenBabel installation found, install it from http://openbabel.org/wiki/Category:Installation")
         user_feedback = "OpenBabel not installed"
-        cf = CifFile(file)
+        #cf = CifFile(file)         CifFile apparently can't read in long filepaths
+        return
     # Open and parse our cif
     f = file.rsplit(dir_sep, 1)[-1]
     F = f[:3]

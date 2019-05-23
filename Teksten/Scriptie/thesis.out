@@ -17,15 +17,19 @@
 \BOOKMARK [1][-]{section.2.4}{CIF-Parsers}{chapter.2}% 17
 \BOOKMARK [1][-]{section.2.5}{Blender en de Blender API}{chapter.2}% 18
 \BOOKMARK [1][-]{section.2.6}{Conclusie}{chapter.2}% 19
-\BOOKMARK [0][-]{chapter.3}{Ontwerpproces}{}% 20
+\BOOKMARK [0][-]{chapter.3}{Algemeen ontwerpproces}{}% 20
 \BOOKMARK [1][-]{section.3.1}{Omvormen van het invoersbestand}{chapter.3}% 21
 \BOOKMARK [1][-]{section.3.2}{Van CIF naar py}{chapter.3}% 22
 \BOOKMARK [1][-]{section.3.3}{Tekenen in Blender}{chapter.3}% 23
 \BOOKMARK [1][-]{section.3.4}{Cre\353ren van een Blender add-on}{chapter.3}% 24
 \BOOKMARK [1][-]{section.3.5}{Conclusie}{chapter.3}% 25
-\BOOKMARK [0][-]{chapter.4}{Werking van het programma}{}% 26
+\BOOKMARK [0][-]{chapter.4}{Gedetailleerd ontwerpproces}{}% 26
 \BOOKMARK [1][-]{section.4.1}{Installatie van externe programma's}{chapter.4}% 27
 \BOOKMARK [1][-]{section.4.2}{Inlezen van het bestand}{chapter.4}% 28
 \BOOKMARK [1][-]{section.4.3}{Tekenen in Blender}{chapter.4}% 29
 \BOOKMARK [1][-]{section.4.4}{Ontwerpen van een Blender add-on}{chapter.4}% 30
-\BOOKMARK [0][-]{chapter*.25}{Bibliografie}{}% 31
+\BOOKMARK [1][-]{section.4.5}{Conclusie}{chapter.4}% 31
+\BOOKMARK [0][-]{chapter.5}{Testen en Resultaten}{}% 32
+\BOOKMARK [1][-]{section.5.1}{Gebruiken van de add-on}{chapter.5}% 33
+\BOOKMARK [1][-]{section.5.2}{\200}{chapter.5}% 34
+\BOOKMARK [0][-]{chapter*.27}{Bibliografie}{}% 35
