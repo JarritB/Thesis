@@ -4,7 +4,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Voorstelling van een eenheidscel in de roosterruimte \citep *{CRYS1}\relax }}{7}{figure.caption.6}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces De 6 kristalfamilies\relax }}{8}{figure.caption.7}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces De 14 bravaisroosters en hun kristalsystemen\relax }}{9}{figure.caption.8}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces De 14 Bravaisroosters en hun kristalsystemen\relax }}{9}{figure.caption.8}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Twee elementen in een rooster met hun fractionale co\IeC {\"o}rdinaten\relax }}{10}{figure.caption.9}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces De user interface van VESTA3\relax }}{15}{figure.caption.10}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces De user interface van Crystalviewer9\relax }}{15}{figure.caption.11}
@@ -26,3 +26,5 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Overzicht van Blenderversies op downloadpagina van blender\relax }}{53}{figure.caption.26}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Openen van de \textit {User Preferences} via GUI(links) en Zoekfunctie(rechts)\relax }}{54}{figure.caption.27}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Duur van het programma in functie van gekozen kwaliteit\relax }}{58}{figure.caption.29}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Vergelijking van de tekenkwaliteit (van boven naar onder: MIN MED MAX)\relax }}{60}{figure.caption.31}

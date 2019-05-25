@@ -107,10 +107,89 @@ Om een kristal te tekenen moeten we eerst een CIF-bestand selecteren. Dit doen w
 
 \subsection{Snelheid}
 
-In een gebruiksvriendelijk programma speelt de snelheid ervan een belangrijke rol. We willen de tijd die een gebruiker moet wachten beperken, maar niet ten koste van van de kwaliteit van de uitvoer. In dit deel van de sectie gaan we kijken naar de duur van het programma bij verschillende parameters en welk deel van het programma het grootste aandeel van de tijd opeist. Merk op dat snelheid vaak evenredig is met de specificaties van het systeem. De specificaties van het systeem waarop de testen zijn uitgevoerd zijn te vinden in de bijlages.[Bijlage H]  
+In een gebruiksvriendelijk programma speelt de snelheid ervan een belangrijke rol. We willen de tijd die een gebruiker moet wachten beperken, maar niet ten koste van van de kwaliteit van de uitvoer. In dit deel van de sectie gaan we kijken naar de duur van het programma bij verschillende parameters en welk deel van het programma het grootste aandeel van de tijd opeist. Merk op dat snelheid vaak evenredig is met de specificaties van het systeem. De specificaties van het systeem waarop we de testen gaan uitgevoeren zijn te vinden in de bijlages.[Bijlage H]  
+\par
+Eerst gaan we de totale duur van het programma testen bij het tekenen van kristallen. Deze testen worden gedaan voor drie kristallen met verschillende grootte. De resultaten van deze testen worden weergegeven op de grafieken in Figuur[5.3]. Enkele opmerkingen bij deze grafieken zijn:
+\begin{itemize}
+\item Op de verticale as wordt de loopduur in seconden weergegeven
+\item Op de horizontale as worden wordt de tekenkwaliteit weergegeven
+\item Het verhogen van de tekenkwaliteit gebeurt met factor vier per stap, en begint bij 32 segmenten
+\item De tekenstijl \textit{LOW} hebben we niet getest
+\item De getallen in de legende van de eerste grafiek zijn het aantal getekende atomen
+\item De getallen in de legende van de tweede grafiek zijn het aantal getekende bindingen, het aantal atomen is gelijk aan de waarden in de eerste grafiek 
+\item De gegeven waarden zijn telkens het gemiddelde van drie testen 
+\item Deze resultaten zijn voor het tekenen van het "BALL AND STICK" model.
+\item Hoewel de andere kristalvoorstellingen ook zijn getest, kregen we gelijkaardige waarden aan die van het "BALL AND STICK" model en worden deze niet gepubliceert.
+\item Bij het testen werd enkel de kristalomkadering getekend, andere instellingen werden uitgezet 
+
+\end{itemize}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{graphs_spd.png}
+\caption{Duur van het programma in functie van gekozen kwaliteit}
+\end{center}
+\end{figure}
+
+Aan de hand van deze resultaten kunnen we er vanuit gaan dat de duurtijd evenredig is met het aantal atomen dat moeten getekend worden. We merken op dat dit geen recht evenredig verband is, het kristal FAU bestaat uit ongeveer vijf keer meer atomen dan CHA, terwijl de tekenen van FAU een factor 20 langer duurt. Dit kan het gevolg zijn van het stelselmatig vol geraken van het werkgeheugen, wat kan leiden tot vertraging van het systeem.  
+\par
+Het aantal bindingen dat wordt getekend heeft ook een grote impact op de snelheid. We stellen vast dat het tekenen van de bindingen een vaste tijd duurt, ongeacht de tekenkwaliteit. Dit is omdat de tekenkwaliteit enkel invloed heeft op het aantal segmenten van de atomen. We kunnen dit grafisch waarnemen doordat de grafieken ruwweg dezelfde vorm tonen maar verschoven zijn naar boven. Door deze vaste duur zal het aandeel aan tijd dat het tekenen van de bindingen in beslag neemt groter zijn bij een lagere kwaliteit. Bij FAU zal het tekenen van de bindingen op de laagste tekenkwaliteit tot wel 85 procent van de totale loopduur van het programma opeisen, terwijl dit bij de hoogste kwaliteit nog maar 40 procent is.
+
+\subsection{Output van het programma}
+In dit deel kijken we voornamelijk naar hoe ons programma kristallen afbeeld in Blender. We gaan, met behulp van figuren, bekijken hoe de verschillende modellen eruitzien, hoe we door het verhogen van de kwaliteit een mooier beeld krijgen en wat er gebeurt als we ons kristal gaan renderen.
+\par
+Op figuur[5.4] kunnen we de invloed zien van de kwaliteit, e.i. het aantal segmenten, van de atomen. In de linkerkolom staan de tekeningen zoals ze in Blender worden weergegeven en in de rechterkolom vinden we de gerenderde tekeningen. We hebben bewust gekozen de stapgrootte tussen deze voorbeelden constant te houden. Tabel[5.2] toont het aantal segmenten per atoom voor de verschillende tekenkwaliteiten. Door de exponentiele toename zou het verschil tussen de kwaliteiten duidelijk zichtbaar moeten zijn. Dit is ook zo, tot op een bepaald punt. Er is een duidelijk verschil tussen de eerste en tweede afbeelding van de linkerkolom van Figuur[5.4], de twee onderste afbeeldingen zijn echter al moeilijker van elkaar te onderscheiden. En wetende dat er tussen deze twee nog een stap zit, kunnen we vaststellen dat het, in de meeste gevallen, niet noodzakelijk is in de hoogste kwaliteit te tekenen.   
+\par
+\begin{table}[H]
+\begin{tabular}{|l|l|}
+\hline
+MIN  & 32   \\ \hline
+LOW  & 128  \\ \hline
+MED  & 512  \\ \hline
+HIGH & 2048 \\ \hline
+MAX  & 8192 \\ \hline
+\end{tabular}
+\caption{Segmenten per atoom bij bepaalde kwaliteit}
+\end{table}
+\par
+Een voorbeeld van zo een geval waarin we wel de hoogste kwaliteit willen is wanneer we ons kristal willen renderen naar een afbeelding. Het concept renderen hebben we reeds besproken in de vijfde sectie van het tweede hoofdstuk. In de rechterkolom van Figuur[5.4] staan de gerenderde versies van de linkerkolom. Nu er belichting aan te pas komt wordt het verschil in kwaliteit tussen de onderste twee duidelijk. Dit is dan ook de voornaamste reden om in de hoogste kwaliteit te tekenen.   
+\par
+
+
+\begin{figure}[H]
+\begin{center}
+\begin{tabular}{l|l}
+
+\includegraphics[width=\paperwidth/3]{OSO_min.png}
+&
+\includegraphics[width=\paperwidth/3]{OSO_minRen.png}
+\\ 
+\includegraphics[width=\paperwidth/3]{OSO_med.png}
+&
+\includegraphics[width=\paperwidth/3]{OSO_medRen.png}
+\\ 
+\includegraphics[width=\paperwidth/3]{OSO_max.png}
+&
+\includegraphics[width=\paperwidth/3]{OSO_maxRen.png}
+\end{tabular}
+\end{center}
+\caption{Vergelijking van de tekenkwaliteit (van boven naar onder: MIN MED MAX)}
+\end{figure}
 
 
 
+\section{Vergelijking met state of the art}  
+Met deze resultaten kunnen we een vergelijking maken met kristalvisualisatiesoftware die op het moment van dit onderzoek voornamelijk worden gebruikt.
+
+
+
+
+ 
+
+	
+
+
+\section{•}
 
 Blender 2.80 is op het moment van dit onderzoek nog een beta versie, dit wil zeggen dat de versie instabiel zou kunnen zijn. Deze instabiliteit heeft echter geen problemen 
    

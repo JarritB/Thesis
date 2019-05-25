@@ -193,7 +193,6 @@ class Operator(bpy.types.Operator):
             add_camera = context.scene.add_camera
             drawCrystal(file_path)
 
-
         return {'FINISHED'}
 
 
@@ -350,6 +349,7 @@ class Crysdata():
     def __init__(self,F,cb):
 
         self.start  =   time.time()
+        print("Draw timer started")
         self.name   =   F
         self.cell   =   Cell(cb)
         self.atoms  =   readEl(cb)
@@ -717,15 +717,23 @@ def clearWS():
         bpy.ops.object.mode_set(mode='OBJECT')
     bpy.ops.object.select_all(action='SELECT')
     bpy.ops.object.delete(use_global=False)
-    # remove all previouscurves
+    # remove all previous curves
     for i in bpy.data.curves:
         bpy.data.curves.remove(i)
+    # remove all previous materials
+    for m in bpy.data.materials:
+        bpy.data.materials.remove(m)
+    # remove all previous camera's
+    for c in bpy.data.cameras:
+        bpy.data.cameras.remove(c)
+
     print("Workspace cleared.")
     return
 
 
 def drawCrystal(file):
     # Check if file is file:
+    S = time.time()
     global user_feedback
     ext = file[len(file)-4:]
     if(ext.lower() != ".cif"):
@@ -753,6 +761,8 @@ def drawCrystal(file):
     # Print crystal data in terminal if checked
     if(print_data):
         Crystal.printout()
+
+    print("Crystal data read after "+ str(time.time() - S) + " seconds")
 
     # Draw crystal if in Blender environment
     if(Blender_env):
