@@ -88,6 +88,17 @@
 \contentsline {section}{\numberline {5.2}Resultaten}{57}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Snelheid}{57}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Output van het programma}{59}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}Vergelijking met state of the art}{60}{section.5.3}
-\contentsline {section}{\numberline {5.4}\IeC {\textbullet }}{60}{section.5.4}
-\contentsline {chapter}{Bibliografie}{61}{chapter*.32}
+\contentsline {section}{\numberline {5.3}Vergelijking met VESTA}{60}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Snelheid}{60}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Gebruiksvriendelijkheid}{61}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Uitbreidbaarheid}{62}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}Valkuilen en problemen}{62}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Blender 2.80}{62}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}PyCIFRW}{62}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Bpy module}{63}{subsection.5.4.3}
+\contentsline {section}{\numberline {5.5}Uitbreidingen}{63}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Bepalen van grenzen}{64}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Bindingsafstand per atoom}{64}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}CCTBX}{65}{subsection.5.5.3}
+\contentsline {section}{\numberline {5.6}conclusie}{65}{section.5.6}
+\contentsline {chapter}{Bibliografie}{67}{chapter*.35}

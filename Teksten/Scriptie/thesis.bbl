@@ -8,6 +8,11 @@ Bernstein, H.~J., Bollinger, J.~C., Brown, I.~D., Gra{\v{z}}ulis, S., Hester,
   version 2.0.
 \newblock {\em Journal of Applied Crystallography}, 49(1):277--284.
 
+\bibitem[Blender, 2019]{BLEN3}
+Blender (2019).
+\newblock Blender2.80 python api documentation.
+\newblock \url{https://docs.blender.org/api/blender2.8/}.
+
 \bibitem[Blenderguru, 2012]{BLEN2}
 Blenderguru (2012).
 \newblock Photorealism competition results.
