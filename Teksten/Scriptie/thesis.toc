@@ -33,7 +33,7 @@
 \contentsline {subsection}{\numberline {2.3.2}Andere 3D visualisatiesoftware}{15}{subsection.2.3.2}
 \contentsline {section}{\numberline {2.4}CIF-Parsers}{16}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Wat is een parser}{16}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Het schrijven van een parser}{16}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.2}Het schrijven van een parser}{17}{subsection.2.4.2}
 \contentsline {subsection}{\numberline {2.4.3}The Computational Crystallography Toolbox (cctbx)}{17}{subsection.2.4.3}
 \contentsline {subsection}{\numberline {2.4.4}Python CIF Read/Write (PyCIFRW)}{17}{subsection.2.4.4}
 \contentsline {section}{\numberline {2.5}Blender en de Blender API}{18}{section.2.5}
@@ -44,65 +44,65 @@
 \contentsline {subsection}{\numberline {2.5.5}Andere opmerkelijke tools in Blender}{20}{subsection.2.5.5}
 \contentsline {subsection}{\numberline {2.5.6}Scripten in Blender met de Blender API}{21}{subsection.2.5.6}
 \contentsline {section}{\numberline {2.6}Conclusie}{22}{section.2.6}
-\contentsline {chapter}{\numberline {3}Algemeen ontwerpproces}{23}{chapter.3}
-\contentsline {section}{\numberline {3.1}Omvormen van het invoersbestand}{23}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Symmetrieoperaties in het CIF-formaat}{23}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}OpenBabel}{24}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Van CIF naar py}{25}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Ontwerpen van datastructuren}{25}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Inlezen van CIF-bestanden}{26}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Tekenen in Blender}{26}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Berekenen van de conversiematrix}{26}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Omkadering van de eenheidscel}{27}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Atomen}{27}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Atoombindingen}{27}{subsection.3.3.4}
-\contentsline {section}{\numberline {3.4}Cre\IeC {\"e}ren van een Blender add-on}{28}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Blender add-ons}{28}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Opbouw van een add-on script}{29}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Operatoren}{29}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}Panelen}{29}{subsection.3.4.4}
-\contentsline {section}{\numberline {3.5}Conclusie}{31}{section.3.5}
-\contentsline {chapter}{\numberline {4}Gedetailleerd ontwerpproces}{32}{chapter.4}
-\contentsline {section}{\numberline {4.1}Installatie van externe programma's}{32}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}OpenBabel}{33}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}PyCIFRW}{33}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Inlezen van het bestand}{34}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Controleren van het bestand}{34}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Uitvoeren van OpenBabel}{34}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Zelf een parser ontwerpen}{36}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Parsen met PyCifRW}{36}{subsection.4.2.4}
-\contentsline {section}{\numberline {4.3}Tekenen in Blender}{38}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Programmeren met de Blender API}{38}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Tekenen van de omkadering}{39}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Tekenen van atomen}{40}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Tekenen van bindingen}{42}{subsection.4.3.4}
-\contentsline {section}{\numberline {4.4}Ontwerpen van een Blender add-on}{45}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Add-on header}{45}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Schrijven van operatoren}{46}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Cre\IeC {\"e}ren van de user interface}{47}{subsection.4.4.3}
-\contentsline {section}{\numberline {4.5}Conclusie}{49}{section.4.5}
-\contentsline {chapter}{\numberline {5}Testen en Resultaten}{52}{chapter.5}
-\contentsline {section}{\numberline {5.1}Een kristal tekenen met de add-on}{53}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Stap 1: Blender downloaden}{53}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Stap 2: Externe programma's installeren}{53}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Stap 3: Add-on downloaden}{54}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Stap 4: Add-on activeren}{54}{subsection.5.1.4}
-\contentsline {subsection}{\numberline {5.1.5}Stap 5: Kristal tekenen met de add-on}{55}{subsection.5.1.5}
-\contentsline {section}{\numberline {5.2}Resultaten}{57}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Snelheid}{57}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Output van het programma}{59}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}Vergelijking met VESTA}{60}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Snelheid}{60}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Gebruiksvriendelijkheid}{61}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Uitbreidbaarheid}{62}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}Valkuilen en problemen}{62}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Blender 2.80}{62}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}PyCIFRW}{62}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Bpy module}{63}{subsection.5.4.3}
-\contentsline {section}{\numberline {5.5}Uitbreidingen}{63}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Bepalen van grenzen}{64}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Bindingsafstand per atoom}{64}{subsection.5.5.2}
-\contentsline {subsection}{\numberline {5.5.3}CCTBX}{65}{subsection.5.5.3}
-\contentsline {section}{\numberline {5.6}Conclusie}{65}{section.5.6}
-\contentsline {chapter}{\numberline {6}Besluit}{67}{chapter.6}
-\contentsline {chapter}{Bibliografie}{70}{chapter*.40}
+\contentsline {chapter}{\numberline {3}Algemeen ontwerpproces}{24}{chapter.3}
+\contentsline {section}{\numberline {3.1}Omvormen van het invoersbestand}{24}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Symmetrieoperaties in het CIF-formaat}{24}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}OpenBabel}{25}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Van CIF naar py}{26}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Ontwerpen van datastructuren}{26}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Inlezen van CIF-bestanden}{27}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Tekenen in Blender}{28}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Berekenen van de conversiematrix}{28}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Omkadering van de eenheidscel}{28}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Atomen}{28}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Atoombindingen}{28}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}Cre\IeC {\"e}ren van een Blender add-on}{29}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Blender add-ons}{29}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Opbouw van een add-on script}{30}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Operatoren}{30}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Panelen}{31}{subsection.3.4.4}
+\contentsline {section}{\numberline {3.5}Conclusie}{33}{section.3.5}
+\contentsline {chapter}{\numberline {4}Gedetailleerd ontwerpproces}{34}{chapter.4}
+\contentsline {section}{\numberline {4.1}Installatie van externe programma's}{34}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}OpenBabel}{35}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}PyCIFRW}{35}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Inlezen van het bestand}{36}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Controleren van het bestand}{36}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Uitvoeren van OpenBabel}{36}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Zelf een parser ontwerpen}{38}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Parsen met PyCifRW}{38}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}Tekenen in Blender}{40}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Programmeren met de Blender API}{40}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Tekenen van de omkadering}{41}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Tekenen van atomen}{42}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Tekenen van bindingen}{44}{subsection.4.3.4}
+\contentsline {section}{\numberline {4.4}Ontwerpen van een Blender add-on}{47}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Add-on header}{47}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Schrijven van operatoren}{48}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Cre\IeC {\"e}ren van de user interface}{49}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5}Conclusie}{51}{section.4.5}
+\contentsline {chapter}{\numberline {5}Testen en Resultaten}{54}{chapter.5}
+\contentsline {section}{\numberline {5.1}Een kristal tekenen met de add-on}{55}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Stap 1: Blender downloaden}{55}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Stap 2: Externe programma's installeren}{55}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Stap 3: Add-on downloaden}{56}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Stap 4: Add-on activeren}{56}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.5}Stap 5: Kristal tekenen met de add-on}{57}{subsection.5.1.5}
+\contentsline {section}{\numberline {5.2}Resultaten}{59}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Snelheid}{59}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Output van het programma}{61}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Vergelijking met VESTA}{62}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Snelheid}{62}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Gebruiksvriendelijkheid}{63}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Uitbreidbaarheid}{64}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}Valkuilen en problemen}{64}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Blender 2.80}{64}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}PyCIFRW}{64}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Bpy module}{65}{subsection.5.4.3}
+\contentsline {section}{\numberline {5.5}Uitbreidingen}{65}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Bepalen van grenzen}{66}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Bindingsafstand per atoom}{66}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}CCTBX}{67}{subsection.5.5.3}
+\contentsline {section}{\numberline {5.6}Conclusie}{67}{section.5.6}
+\contentsline {chapter}{\numberline {6}Besluit}{69}{chapter.6}
+\contentsline {chapter}{Bibliografie}{72}{chapter*.40}

@@ -8,5 +8,10 @@ blender-2.80.0-git.3c8c1841d72-windows64/2.80/scripts/addons/*
 !blender-2.80.0-git.3c8c1841d72-windows64/2.80/scripts/addons/crystallographic_interface/
 
 VESTA-win64/*
+JMOL Molecules/*
+Links/*
+Literatuur/*
+Scripts/*
+
 *.exe
 *.lnk

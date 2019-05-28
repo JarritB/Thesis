@@ -29,7 +29,9 @@ OpenBabel is een open source chemische toolbox die gebruikt wordt om chemische d
 De broncode van OpenBabel staat vrij beschikbaar op hun GitHub pagina.  Hiernaast is het ook mogelijk de GUI-versie van OpenBabel te downloaden door de installatie-instructies te volgen die te vinden zijn op hun officiële webpagina.\citep*{OBAB1}   
 \par
 \begin{figure}[h]
+\begin{center}
 \includegraphics[width=\textwidth,keepaspectratio]{OpenBabelGUI.png}
+\end{center}
 \caption{Conversie van ruimtegroep met OpenBabel GUI}
 \end{figure}
 \par
@@ -45,7 +47,9 @@ Nu het CIF-bestand naar een meer bruikbaar formaat is omgezet, is er nood aan da
 Het inlezen van de data wordt in drie klassen gedaan. Een eerste klasse, \textit{Cell}, die informatie bevat over het kristalrooster, waaronder de roosterparameters. Deze data-elementen worden ook wel de attributen van een klasse genoemd. Een tweede klasse, \textit{Atom}, die de fractionele coördinaten van het atoom bevat en welk element het voorstelt. De derde klasse, \textit{Crysdata}, overkoepelt voorgaande klassen in de zin dat deze naast de naam van het kristal ook één object van de klasse \textit{Cell} en een lijst van objecten van de klasse \textit{Atom} bevat. Hiernaast bezit elke klasse ook de methode, \textit{printout()}, die de data van de klasse op een nette manier weergeeft op de terminal, en de methode \textit{draw()} die later gebruikt wordt om het object te tekenen in Blender. Methodes zijn functies die op een object van een klasse kunnen worden opgeroepen.  In Figuur[3.2] worden de onderlinge verhoudingen van deze klassen verduidelijkt, dergelijke figuur wordt een klassendiagramma genoemd, en geeft de algemene opbouw van een programma aan de hand van de gebruikte attributen, methodes, modules en hun onderlinge relaties. Uit dit diagram kan er geïnterpreteerd worden hoe de data uit het CIF-bestand met behulp van de PyCIFRW-parser zal worden ingelezen in de drie eerder genoemde klassen.
 
 \begin{figure}[h]
+\begin{center}
 \includegraphics[scale=0.7]{ClassDiagramEz.png}
+\end{center}
 \caption{Vereenvoudigd klassendiagramma van het programma}
 \end{figure}
 
@@ -77,7 +81,9 @@ Het programma zal tussen de twee bollen die de atomen voorstellen een \textit{b�
 \par
 Op Figuur[3.3] zijn de drie stappen van het tekenen van een eenheidskristal te zien, eerst de omkadering, dan de atomen en ten slotte de bindingen tussen de atomen.
 \begin{figure}[h]
+\begin{center}
 \includegraphics[width=\textwidth,keepaspectratio]{getekend.png}
+\end{center}
 \caption{De drie stappen in het tekenen van een kristal}
 \end{figure}
 
@@ -104,7 +110,9 @@ Panelen, of \textit{panels} zijn klassen die als voornaamste functie het visuali
 De opmaak van het paneel kan worden aangepast door middel van kleuren, pictogrammen, het invoegen van scheidingen, het gebruik van rijen en kolommen en door onderdelen van het paneel in aparte kaders onder te brengen.
 \par
 \begin{figure}[H]
+\begin{center}
 \includegraphics[scale=0.9]{paneel.png}
+\end{center}
 \caption{Het paneel van de add-on in de Blender GUI}
 \end{figure}
 

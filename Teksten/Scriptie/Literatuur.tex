@@ -37,8 +37,10 @@ Alle kristallen zijn gedefinieerd als een periodische schikking van atomen, ione
 Geometrisch gezien bevat een eenheidscel 3 paar evenwijdige parallellogrammen als omhullende vlakken en kan het beschreven worden aan de hand van 6 variabelen, welke de roosterparameters worden genoemd.  De parameters a, b en c bepalen de lengte tussen de roosterpunten volgens de drie assen van de roosterruimte . De drie resterende  variabelen worden gebruikt om de hoeken tussen deze assen te beschrijven en worden \textalpha, \textbeta{} en \textgamma{} genoemd. Deze variabelen staan ook aangeduid op Figuur[2.1] met de eenheidscel in rood. 
 
 \begin{figure}
+\begin{center}
 \includegraphics[scale=0.3]{roosterruimte.png}
 \caption{Voorstelling van een eenheidscel in de roosterruimte \citep*{CRYS1}}
+\end{center}
 \end{figure}
 
 \subsection{Classificatie van kristalroosters}
@@ -65,7 +67,9 @@ Ten slotte kan er zich, naast de roosterpunten op de hoeken, ook een in het cent
 In het geval van het trigonale kristalsysteem bestaat er een speciale vorm van centrering in overeenkomst met de drievoudige symmetrie, welke R-centrering genoemd wordt. Kolom b van Figuur[2.3] geeft de 14 resulterende Bravaisroosters weer, dit zijn alle mogelijke vormen dat een kristal kan aannemen.
  
 \begin{figure}[H]
+\begin{center}
 \includegraphics[scale=0.6]{Bravais.png}
+\end{center}
 \caption{De 14 Bravaisroosters en hun kristalsystemen}
 \end{figure}
 
@@ -85,7 +89,9 @@ Met voorgaande informatie in het achterhoofd is het mogelijk een kristalstructuu
 De positie van atomen binnen het eenheidskristal wordt meestal beschreven aan de hand van zijn x-, y- en z-waarden. Deze waarden stellen steeds hun relatieve positie voor ten opzichte van de respectievelijk a- b- en c-waarden van de roosterparameters, vandaar de naam fractioneel, en liggen steeds tussen nul en een. Het gebruik van het fractionele systeem heeft als groot voordeel dat het erg eenvoudig te interpreteren is, zo hoeft er geen rekening gehouden te worden met de hoeken tussen de assen van het eenheidskristal. Een element met waarden ($\frac{1}{2}$,$\frac{1}{2}$,$\frac{1}{2}$) ligt dus bijvoorbeeld in het midden van het kristal, terwijl een met waarden (1,1,1) het hoekpunt van het rooster inneemt dat zich diagonaal tegenover de oorsprong van het rooster bevindt, Figuur[2.4].
 \par
 \begin{figure}[H]
+\begin{center}
 \includegraphics[scale=0.5]{FractionalExample.png}
+\end{center}
 \caption{Twee elementen in een rooster met hun fractionale coördinaten}
 \end{figure}
 \par
@@ -204,7 +210,9 @@ Aangezien het CIF-formaat gezien kan worden als een standaardformaat voor het be
 Als een van de meest frequent gebruikte 3D visualisatieprogramma’s biedt VESTA 3 een grotere verscheidenheid aan features en voordelen dan zijn voorgangers en andere, gelijkaardige programma’s doen. VESTA beschrijft zichzelf als een gratis te gebruiken 3D visualisatiesysteem voor structurele modellen, volumetrische data en kristalmorfologieën. \citep*{VESTA1} De software wordt ondersteund op Windows, Mac en Linux. Geschreven in de programmeertaal C met het gebruik van de OpenGL technologie en een modern C++ GUI framework biedt VESTA een gebruikersvriendelijke interface met de mogelijkheid tot het roteren, transleren en schalen van het getekende object alsook het hierop plaatsen van fysieke gegevens zoals elektronendichtheden, nucleaire dichtheden, golffuncties en elektrostatische potentialen. Hiernaast bestaan er verschillende manieren om het object weer te geven. De omvang van deze objecten is in theorie oneindig en wordt slechts beperkt door de hardware van de computer, hoe groter het grafische rekenvermogen van deze hoe vlotter het zal functioneren. De grafische interface van VESTA wordt weergegeven op Figuur[2.5]. VESTA is in staat verschillende bestandsformaten om te zetten naar een driedimensionale voorstelling, zoals het CIF-formaat. VESTA laat toe nieuwe modellen aan te maken of bestaande modellen aan te passen. Gecreëerde objecten kunnen ten slotte geëxporteerd worden in de meest voorkomende 3D formaten zodat ze in andere 3D software, zoals Blender, kunnen worden bekeken.
 \\
 \begin{figure}[H]
+\begin{center}
 \includegraphics[scale=0.2]{VESTA-UI.png}
+\end{center}
 \caption{De user interface van VESTA3}
 \end{figure}
 
@@ -223,7 +231,9 @@ Naast VESTA bestaat er nog een groot aanbod aan andere software die in staat zij
 Een andere bekende tegenhanger van VESTA is Olex\textsuperscript{2}, zie Figuur[2.7]. Olex\textsuperscript{2} biedt, net zoals VESTA, een groot aantal features aan, welke duidelijk beschreven worden in een overzichtelijke documentatie. Het softwarepakket is volledig gratis en ter beschikking van iedereen. Olex\textsuperscript{2} is volledig geschreven in Python en maakt gebruik van enkele bibliotheken die de gebruiker de mogelijkheid biedt verschillende kristalbeschrijvingsformaten, waaronder CIF, in te lezen en te visualiseren. Ondanks de features en documentatie is het gebruiken van Olex\textsuperscript{2} minder eenvoudig dan de eerder geziene programma’s. Bij het testen van dit programma trad er ook een probleem op bij het visualiseren van een CIF-bestand, wat deze software voor deze toepassing vrijwel onbruikbaar maakt.
 
 \begin{figure}[h]
+\begin{center}
 \includegraphics[scale=0.2]{Olex2-UI.png}
+\end{center}
 \caption{De user interface van Olex\textsuperscript{2}}
 \end{figure}
 
@@ -291,7 +301,9 @@ Met deze informatie kan er een object aangemaakt en verplaatst worden en kunnen 
 Blender laat de gebruiker toe de gemaakte objecten, naast vorm, ook kleur te geven. Eerst krijgt het object een materiaal toegekend, waarna de eigenschappen van dit materiaal kunnen worden aangepast. Deze eigenschappen zijn onder andere de kleur, lichtuitstraling, weerspiegeling, schaduw en doorzichtigheid van het object. Om het object er nog realistischer te laten uitzien kan er een textuur op het object worden gezet. Deze geven het object een bepaalde oppervlaktestructuur of uiterlijk. Blender voorziet een aantal basistexturen maar de gebruiker kan zelf afbeeldingen gebruiken om het voorwerp een textuur te geven. Wanneer de objecten een kleur of textuur hebben kan de gebruiker deze renderen. Dit gaat alle lichtinteracties en schaduws berekenen, wat erg computerintensief kan zijn. In Figuur[2.10] wordt de uitkomst van het renderen van een Blender project weergegeven, door slim gebruik van texturen en materiaaleigenschappen was de ontwerper in staat een 3D tekening levensecht te laten lijken.\citep*{BLEN2}
 
 \begin{figure}[h]
+\begin{center}
 \includegraphics[scale=0.5]{blenderreal.png}
+\end{center}
 \caption{Het Blender project van de winnaar van een fotorealiteit wedstrijd, na rendering}
 \end{figure}
 
