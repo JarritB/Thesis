@@ -28,7 +28,7 @@ Dit is het stappenplan voor de installatie en het gebruik van de add-on op het b
 \subsection{Stap 1: Blender downloaden}
 Als eerste moeten we Blender downloaden op ons syteem. Onze add-on is gemaakt voor versie 2.8x van Blender. In deze versie is er veel vernieuwd aan de Blender API waardoor de add-on niet achterwaarts compatibel is. Dit wil zeggen dat de add-on niet zal werken op oudere versies van Blender zonder de code aan te passen. In dit hoofdstuk spreken we, tenzij anders vermeld, altijd over de 2.8x versie van Blender .  
 \par
-Blender kan gedownload worden op de downloadpagina van hun offiële website:\url{https://builder.blender.org/download/}. Hier kiezen we het besturingssysteem en de bit-versie van ons systeem, en selecteren we de nieuwste versie van Blender, rode kader op Figuur[5.1].  Dit download het ZIP-bestand waarin de Blender installatie staat. Als de download voltooid is kunnen we het ZIP-bestand uitpakken op ons systeem. Dit creëert een map waarin de Blender installatie staat. In deze map vinden we het uitvoerbare bestand \textit{blender.exe}, waarmee we Blender opstarten. Dit is tevens ook de map waarin we de CifFile module in plaatsen, zie eerste sectie van hoofdstuk vier.      
+Blender kan gedownload worden op de downloadpagina van hun offiële website:\url{https://builder.blender.org/download/}. Hier kiezen we het besturingssysteem en de bit-versie van ons systeem, en selecteren we de nieuwste versie van Blender, rode kader op Figuur[5.1].  Dit download het ZIP-bestand waarin de Blender installatie staat. Als de download voltooid is, kunnen we het ZIP-bestand uitpakken op ons systeem. Dit creëert een map waarin de Blender installatie staat. In deze map vinden we het uitvoerbare bestand \textit{blender.exe}, waarmee we Blender opstarten. Dit is tevens ook de map waarin we de CifFile module in plaatsen, zie eerste sectie van hoofdstuk vier.      
 
 \begin{figure}[h]
 \begin{center}
@@ -71,11 +71,11 @@ Om de add-on te activeren moeten we eerst Blender opstarten door \textit{blender
 Onder de tab \textit{add-ons} vinden we een lijst met add-ons die we kunnen gebruiken in Blender. Omdat we onze add-on in de map van Blender hebben geplaatst zou deze in de lijst moeten te vinden zijn onder de naam: \textit{Crystallography in Blender: Crystallographic Drawing Tool for Blender}. Om de add-on te activeren hoeven we enkel het selectievakje links van de naam aan te duiden. Als het vakje is aangevinkt is de add-on geactiveerd en klaar voor gebruik.
 
 \subsection{Stap 5: Kristal tekenen met de add-on}
-We kunnen de label van onze add-on zien onder het veld \textit{Tools} op het \textit{3D View} venster. Dit is het grote venster in het midden dat we zien wanneer we Blender opstarten. Het \textit{Tools} veld vinden we aan de linkerkant van dit venster, maar kan verborgen zijn. Met de T toets tonen en verbergen we tools veld. Bij het aanklikken van het \textit{CDTB} label zal ons paneel tevoorschijn komen. Als we ons in 'Edit Mode' bevinden zal het label niet getoont worden, door de Tab toets in te drukken geraken we terug in 'Object Mode', waar onze add-on zou moeten staan.  
+We kunnen het label van onze add-on zien onder het veld \textit{Tools} op het \textit{3D View} venster. Dit is het grote venster in het midden dat we zien wanneer we Blender opstarten. Het \textit{Tools} veld vinden we aan de linkerkant van dit venster, maar kan verborgen zijn. Met de T toets tonen en verbergen we tools veld. Bij het aanklikken van het \textit{CDTB} label zal ons paneel tevoorschijn komen. Als we ons in 'Edit Mode' bevinden zal het label niet getoond worden. Door de Tab toets in te drukken geraken we terug in 'Object Mode', waar onze add-on zou moeten staan.  
 \par   
 
 
-Om een kristal te tekenen moeten we eerst een CIF-bestand selecteren. Dit doen we door met het icoon naast \" Select a file \" een bestandsbrowser te openen en ons CIF-bestand te selecteren. Dan hebben we de mogelijkheid om een aantal tekenvoorkeuren aan te passen, in Tabel[5.1] worden deze uitgelegd. Als we de voorkeuren hebben aangepast hoeven we enkel nog op de \textit{Draw Crystal} knop te klikken, en te wachten tot het kristal getekend is. Dit duurt, afhankelijk van de gekozen tekenopties en de grootte van het kristal, enkele seconden tot enkele minuten.
+Om een kristal te tekenen moeten we eerst een CIF-bestand selecteren. Dit doen we door met het icoon naast \"{} Select a file \"{} een bestandsbrowser te openen en ons CIF-bestand te selecteren. Dan hebben we de mogelijkheid om een aantal tekenvoorkeuren aan te passen, in Tabel[5.1] worden deze uitgelegd. Als we de voorkeuren hebben aangepast hoeven we enkel nog op de \textit{Draw Crystal} knop te klikken, en te wachten tot het kristal getekend is. Dit duurt, afhankelijk van de gekozen tekenopties en de grootte van het kristal, enkele seconden tot enkele minuten.
 \par
 
 \begin{table}[H]
@@ -106,7 +106,7 @@ Om een kristal te tekenen moeten we eerst een CIF-bestand selecteren. Dit doen w
 
 \subsection{Snelheid}
 
-In een gebruiksvriendelijk programma speelt de snelheid ervan een belangrijke rol. We willen de tijd die een gebruiker moet wachten beperken, maar niet ten koste van de kwaliteit van de uitvoer. In dit deel van de sectie gaan we kijken naar de duur van het programma bij verschillende parameters en welk deel van het programma het grootste aandeel van de tijd opeist. Merk op dat snelheid vaak evenredig is met de specificaties van het systeem. De specificaties van het systeem waarop we de testen gaan uitgevoeren zijn te vinden in de bijlages.[Bijlage H]  
+In een gebruiksvriendelijk programma speelt de snelheid ervan een belangrijke rol. We willen de tijd die een gebruiker moet wachten beperken, maar niet ten koste van de kwaliteit van de uitvoer. In dit deel van de sectie gaan we kijken naar de duur van het programma bij verschillende parameters en welk deel van het programma het grootste aandeel van de tijd opeist. Merk op dat snelheid vaak evenredig is met de specificaties van het systeem. De specificaties van het systeem waarop we de testen gaan uitvoeren, zijn te vinden in de bijlages.[Bijlage H]  
 \par
 Eerst gaan we de totale duur van het programma testen bij het tekenen van kristallen. Deze testen worden gedaan voor drie kristallen met verschillende grootte. De resultaten van deze testen worden weergegeven op de grafieken in Figuur[5.3]. Enkele opmerkingen bij deze grafieken zijn:
 \begin{itemize}
@@ -118,7 +118,7 @@ Eerst gaan we de totale duur van het programma testen bij het tekenen van krista
 \item De getallen in de legende van de tweede grafiek zijn het aantal getekende bindingen, het aantal atomen is gelijk aan de waarden in de eerste grafiek 
 \item De gegeven waarden zijn telkens het gemiddelde van drie testen 
 \item Deze resultaten zijn voor het tekenen van het "BALL AND STICK" model.
-\item Hoewel de andere kristalvoorstellingen ook zijn getest, kregen we gelijkaardige waarden aan die van het "BALL AND STICK" model en worden deze niet gepubliceerd
+\item Hoewel de andere kristalvoorstellingen ook werden getest, kregen we gelijkaardige waarden aan die van het "BALL AND STICK" model en worden deze niet gepubliceerd
 \item Bij het testen wordt enkel de kristalomkadering getekend, andere instellingen staan uit 
 
 \end{itemize}
@@ -135,11 +135,12 @@ Aan de hand van deze resultaten kunnen we er vanuit gaan dat de duurtijd evenred
 Het aantal bindingen dat wordt getekend heeft ook een grote impact op de snelheid. We stellen vast dat het tekenen van de bindingen een vaste tijd duurt, ongeacht de tekenkwaliteit. Dit is omdat de tekenkwaliteit enkel invloed heeft op het aantal segmenten van de atomen. We kunnen dit grafisch waarnemen doordat de grafieken op Figuur[5.3] ruwweg dezelfde vorm tonen maar opwaarts verschoven zijn. Door deze vaste duur zal het aandeel aan tijd dat het tekenen van de bindingen in beslag neemt, groter zijn bij een lagere kwaliteit. Bij FAU zal het tekenen van de bindingen op de laagste tekenkwaliteit tot wel 85 procent van de totale loopduur van het programma opeisen, terwijl dit bij de hoogste kwaliteit nog maar 40 procent is.
 
 \subsection{Output van het programma}
-In dit deel kijken we voornamelijk naar hoe ons programma kristallen afbeelt in Blender. We gaan, met behulp van figuren, bekijken hoe de verschillende modellen eruitzien, hoe we door het verhogen van de kwaliteit een mooier beeld krijgen en wat er gebeurt als we ons kristal gaan renderen.
+In dit deel kijken we voornamelijk naar hoe ons programma kristallen afbeeldt in Blender. We gaan, met behulp van figuren, bekijken hoe de verschillende modellen eruitzien, hoe we door het verhogen van de kwaliteit een mooier beeld krijgen en wat er gebeurt als we ons kristal gaan renderen.
 \par
 Op Figuur[5.4] kunnen we de invloed zien van de kwaliteit, i.e. het aantal segmenten, van de atomen. In de linkerkolom staan de tekeningen zoals ze in Blender worden weergegeven en in de rechterkolom vinden we de gerenderde tekeningen. We hebben bewust gekozen de stapgrootte tussen deze voorbeelden constant te houden. Tabel[5.2] toont het aantal segmenten per atoom voor de verschillende tekenkwaliteiten. Door de exponentiele toename zou het verschil tussen de kwaliteiten duidelijk zichtbaar moeten zijn. Dit is ook zo, tot op een bepaald punt. Er is een duidelijk verschil tussen de eerste en tweede afbeelding van de linkerkolom van Figuur[5.4], de twee onderste afbeeldingen zijn echter al moeilijker van elkaar te onderscheiden. En wetende dat er tussen deze twee nog een stap zit, kunnen we vaststellen dat het, in de meeste gevallen, niet noodzakelijk is in de hoogste kwaliteit te tekenen.   
 \par
 \begin{table}[H]
+\caption{Segmenten per atoom bij bepaalde kwaliteit}
 \begin{tabular}{|l|l|}
 \hline
 MIN  & 32   \\ \hline
@@ -148,10 +149,9 @@ MED  & 512  \\ \hline
 HIGH & 2048 \\ \hline
 MAX  & 8192 \\ \hline
 \end{tabular}
-\caption{Segmenten per atoom bij bepaalde kwaliteit}
 \end{table}
 \par
-Een voorbeeld van zo een geval waarbij we de hoogste kwaliteit willen is wanneer we ons kristal willen renderen naar een afbeelding. Het concept renderen hebben we reeds besproken in de vijfde sectie van het tweede hoofdstuk. In de rechterkolom van Figuur[5.4] staan de gerenderde versies van de linkerkolom. Nu er belichting aan te pas komt wordt het verschil in kwaliteit tussen de onderste twee duidelijk. Dit is dan ook de voornaamste reden om in de hoogste kwaliteit te tekenen.   
+Een voorbeeld van zo een geval waarbij we de hoogste kwaliteit willen, is wanneer we het kristal willen renderen naar een afbeelding. Het concept renderen hebben we reeds besproken in de vijfde sectie van het tweede hoofdstuk. In de rechterkolom van Figuur[5.4] staan de gerenderde versies van de linkerkolom. Nu er belichting aan te pas komt, wordt het verschil in kwaliteit tussen de onderste twee duidelijk. Dit is dan ook de voornaamste reden om in de hoogste kwaliteit te tekenen.   
 \par
 
 
@@ -185,6 +185,7 @@ In Tabel[5.3] wordt de tekensnelheid van ons programma vergeleken met die van VE
 \par
 
 \begin{table}[H]
+\caption{Vergelijking in tekenduur tussen ons programma en VESTA, tijd in seconden}
 \begin{center}
 \begin{tabular}{|l|l|l|l|l|}
 \hline
@@ -194,7 +195,6 @@ In Tabel[5.3] wordt de tekensnelheid van ons programma vergeleken met die van VE
 \multicolumn{1}{|l|}{FAU} & 134.330 	& 0.331 & 405.83 \\ \hline
 \end{tabular}
 \end{center}
-\caption{Vergelijking in tekenduur tussen ons programma en VESTA, tijd in seconden}
 \end{table}
 In de laatste kolom wordt vermeld hoeveel maal sneller het tekenen in VESTA wordt gedaan ten op zichte van het tekenen in Blender. Het valt op dat VESTA kristallen veel sneller tekent, bij grote kristallen tot zelfs 400 maal sneller. Als we geen bindingen zouden tekenen met de add-on, zou deze factor nog 70 bedragen, wat een redelijke afname is, maar nog steeds een groot getal is. 
 \par
@@ -207,27 +207,27 @@ We hebben er naar gestreeft onze add-on zo gebruiksvriendelijk mogelijk te maken
 \par
 Als we kijken naar de weergave van het kristal merken we dat het getekende kristal in Blender veel interactiever is dan in VESTA mogelijk is. In Blender kunnen we individuele atomen verplaatsen, verwijderen en verschalen. Terwijl VESTA deze mogelijkheid niet biedt.
 \par
-Met deze informatie is het moeilijker een winnaar te kiezen op vlak van gebruiksvriendelijkheid dan het was bij de tekensnelheid van de programma's. Dit is deels omdat beide programma's hun voordelen en beperkingen hebben, en veel afhangt van het doel van de gebruiker. Voor een meer wetenschappelijke aanpak zullen we VESTA verkiezen, terwijl voor een meer interactieve oplossing onze add-on kan gebruikt worden.
+Aan de hand van deze informatie is het moeilijker een winnaar te kiezen op vlak van gebruiksvriendelijkheid dan het was bij de tekensnelheid van de programma's. Dit is deels omdat beide programma's hun voordelen en beperkingen hebben. Veel hangt af van de toepassing van het programma. Voor een meer wetenschappelijke aanpak zullen we VESTA verkiezen, terwijl voor een meer interactieve oplossing onze add-on kan gebruikt worden.
 
 \subsection{Uitbreidbaarheid}
-Dit is het vlak waar onze add-on schitterd, en de voornaamste reden van dit onderzoek. 
+Dit is het vlak waar onze add-on uitblinkt, en de voornaamste reden van dit onderzoek. 
 \par
 Hierboven hebben we VESTA geprezen voor het groot aantal features die het aanbiedt in vergelijking met onze add-on. Nu echter de basis van onze add-on is gelegd, kunnen we deze verder uitbreiden en allerlei features toevoegen. Het zelf creëren van features is met VESTA niet mogelijk. Hoewel VESTA enkele malen per jaar een update krijgt, zijn dit voornamelijk bugfixes en ligt het volledig in de hand van de makers of er nieuwe features worden toegevoegd.   
 \par
-Op vlak van uitbreidbaarheid is onze add-on de grote winnaar. Het toevoegen van features aan de add-on is een kwestie van lijnen code toe te voegen aan de broncode van het programma. In de vierde sectie van dit hoofdstuk gaan we in meer detail mogelijke uitbreidingen bespreken. 
+Op vlak van uitbreidbaarheid is onze add-on de grote winnaar. Het toevoegen van features aan de add-on is een kwestie van lijnen code toe te voegen aan de broncode van het programma. In de vijfde sectie van dit hoofdstuk gaan we in meer detail mogelijke uitbreidingen bespreken. 
 
 
 \section{Valkuilen en problemen}
 
 \subsection{Blender 2.80}
-Zoals eerder gezegd werken we in dit onderzoek met Blender versie 2.80. Deze versie van Blender is op het moment van dit onderzoek nog in beta, dit wil zeggen dat Blender, hoewel bruikbaar, constant onder constructie is. Dit kan leiden tot instabiliteit van de software wat een risico vormde voor dit onderzoek. Ondanks het risico, zijn er in de loop van dit onderzoek geen problemen geweest als gevolg van deze instabiliteit.
+Zoals eerder gezegd, werken we in dit onderzoek met Blender versie 2.80. Deze versie van Blender is op het moment van dit onderzoek nog in beta, dit wil zeggen dat Blender, hoewel bruikbaar, constant onder constructie is. Dit kan leiden tot instabiliteit van de software wat een risico vormde voor dit onderzoek. Ondanks het risico, zijn er in de loop van dit onderzoek geen problemen geweest als gevolg van deze instabiliteit.
 \par
 Doordat er in de 2.80 versie veel is veranderd ten op zichte van eerdere versies, en deze relatief nieuw is, was het geregeld moeilijk correcte informatie te vinden op fora. De Blender API heeft gelukkig een zeer duidelijke documentatie die vaak werd geraadpleegd in dit onderzoek.\citep*{BLEN3} 
 \par
 
 
 \subsection{PyCIFRW}
-In de vierde sectie van het tweede hoofdstuk testen wordt er uitgelegd hoe we gaan controleren of de OpenBabel geïnstalleerd is op het systeem. In het geval dat deze installatie niet wordt gevonden staat er: "Hoewel het kristal niet kan geconverteerd worden, zullen we toch een deel van het kristal kunnen tekenen." Door een fout in de code van de CifFile module verschijnt er een foutboodschap als er een te lange padnaam wordt meegegeven bij het inlezen van het CIF-bestand en wordt het programma afgesloten. Doordat de bestandsbrowser steeds het volledige pad meegeeft kan dit probleem zeer moeilijk worden opgelost, en zelfs dan zouden enkel bestanden in de map van Blender kunnen ingelezen worden. 
+In de tweede sectie van het vierde hoofdstuk wordt er uitgelegd hoe we gaan controleren of de OpenBabel geïnstalleerd is op het systeem. In het geval dat deze installatie niet wordt gevonden staat er: "Hoewel het kristal niet kan geconverteerd worden, zullen we toch een deel van het kristal kunnen tekenen. Door een fout in de code van de CifFile module verschijnt er een foutboodschap als er een te lange padnaam wordt meegegeven bij het inlezen van het CIF-bestand en wordt het programma afgesloten. Doordat de bestandsbrowser steeds het volledige pad meegeeft kan dit probleem zeer moeilijk worden opgelost, en zelfs dan zouden enkel bestanden in de map van Blender kunnen ingelezen worden. 
 \par
 Zodra PyCIFRW een update krijgt, die dit probleem oplost, zou onze add-on moeten werken zelfs zonder installatie van OpenBabel. Tot dan zal het kristal niet kunnen getekend worden zonder OpenBabel.
 
@@ -247,6 +247,7 @@ print(time.time()-S)
 \end{lstlisting}
 
 \begin{table}[H]
+\caption{Vergelijking duur van ons programma en het tekenen van enkel bollen, tijd in seconden}
 \begin{center}
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
@@ -256,10 +257,9 @@ print(time.time()-S)
 576 & 22.76 	& 16.95 	& 5.81 		&	25.5 \\ \hline
 \end{tabular}
 \end{center}
-\caption{Vergelijking duur van ons programma en het tekenen van enkel bollen, tijd in seconden}
 \end{table}
 
-Uit Tabel[5.4] leiden we af dat ons programma gemiddeld 80 procent van de totale loopduur besteedt aan het tekenen van de atomen. Hoewel dit kan gezien worden als een \textit{bottleneck} van het programma, kunnen we hier weinig of niets aan veranderen en zijn we beperkt de overige 20 procent te optimaliseren. 
+Uit Tabel[5.4] leiden we af dat ons programma gemiddeld 80 procent van de totale loopduur besteedt aan het tekenen van de atomen. Hoewel dit kan gezien worden als een \textit{bottleneck} van het programma, kunnen we hier weinig of niets aan veranderen en zijn we slechts in staat de overige 20 procent te optimaliseren. 
 
 \section{Uitbreidingen}
 In deze sectie bespreken we enkele uitbreidingen die in de toekomst nog kunnen worden uitgevoerd. Hoewel de lijst van mogelijke uitbreidingen op zich eindeloos is omdat met de combinatie van Python modules en de Blender API bijna alles mogelijk is, zullen we ons beperken tot enkele interessante features.
@@ -291,16 +291,16 @@ Een dictionary met bindingsafstanden zou op een gelijkaardige manier worden gema
 \subsection{CCTBX}
 In de vierde sectie van hoofdstuk twee hebben we de \textit{Computational Crystallography Toolbox} reeds besproken als een alternatief voor PyCIFRW om CIF-bestanden te parsen. Naast het parsen van bestanden heeft de cctbx nog een hele reeks aan andere functionaliteiten, waarvan veel erg handig kunnen zijn voor ons programma. Zo zou de cctbx niet enkel OpenBabel kunnen vervangen om de plaats van de atomen binnen de eenheidscel te berekenen, het is zelfs in staat de positie van alle atomen binnen bepaalde grenzen te berekenen, zoals we eerder in deze sectie hebben besproken.
 \par
-Het enige wat ons tegenhoudt cctbx te gebruiken is dat het erg moeilijk is deze werkende te krijgen op een Windowssysteem. In tegenstelling tot de installatie op Linux, welke met slechts één commando kan gedaan worden, is de installatie op Windows erg lastig. Zowel de installatiehandleiding die te vinden is op de website van cctbx, als de handleiding op hun GitHub pagina is gedateerd en voor dat de installatie kan worden uitgevoerd moeten er een aantal programma's geïnstalleerd zijn. We willen ook zeker zijn dat programma bruikbaar is op elk besturingssysteem en dat de installatie ervan niet te moeilijk is voor onervaren gebruikers. Dit alles heeft ertoe geleid dat er in dit onderzoek geen gebruik is gemaakt van de cctbx.
+Het enige wat ons tegenhoudt cctbx te gebruiken is dat het erg moeilijk is deze werkende te krijgen op een Windowssysteem. In tegenstelling tot de installatie op Linux, welke met slechts één commando kan gedaan worden, is de installatie op Windows erg lastig. Zowel de installatiehandleiding die te vinden is op de website van cctbx, als de handleiding op hun GitHub pagina is gedateerd en vooraleer de installatie kan worden uitgevoerd, moeten er een aantal programma's geïnstalleerd zijn. We willen ook zeker zijn dat het programma bruikbaar is op elk besturingssysteem en dat de installatie ervan niet te moeilijk is voor onervaren gebruikers. Dit alles heeft ertoe geleid dat er in dit onderzoek geen gebruik is gemaakt van de cctbx.
 
-\section{conclusie}
+\section{Conclusie}
 In dit hoofdstuk zagen we eerst een stappenplan voor het gebruiken van onze add-on. Dit dient als handleiding die gebruikers kunnen volgen om de add-on te gebruiken zonder enige voorkennis nodig te hebben. 
 \par
-Uit de resultaten die we uit de testen verkregen, kunnen we concluderen dat de tekenduur van de add-on voor een klein kristal in de groteorde van enkele seconden is, terwijl dit voor grote kristallen naar enkele tientalle seconden neigt. De duur neemt ook toe wanneer we de tekenkwaliteit opdrijven. Het tekenen van bindingen zal aan deze tekenduur een vaste waarde toevoegen onafhankelijk van de tekenkwaliteit. Dit is omdat de kwaliteit enkel invloed heeft op het aantal segmenten van de atomen en niet die van de bindingen.
+Uit de resultaten die we uit de testen verkregen, kunnen we concluderen dat de tekenduur van de add-on voor een klein kristal in de grootteorde van enkele seconden is, terwijl dit voor grote kristallen naar enkele tientallen seconden neigt. De duur neemt ook toe wanneer we de tekenkwaliteit opdrijven. Het tekenen van bindingen zal aan deze tekenduur een vaste waarde toevoegen onafhankelijk van de tekenkwaliteit. Dit is omdat de kwaliteit enkel invloed heeft op het aantal segmenten van de atomen en niet die van de bindingen.
 \par    
-In vergelijking met VESTA duurt het tekenen van een kristal beduidend langer bij onze add-on. Bij een klein kristal duurt het ongeveer 17 maal langer en deze factor neemt toe tot wel 400 bij een groot kristal. Deze langzaamheid is voornamelijk te wijten aan de bpy module welke eerder traag is. Door het uitvoeren van enkele testen hebben we waargenomen dat gemiddeld 80 procent van de loopduur van ons programma naar het tekenen van de atomen gaat. 
+In vergelijking met VESTA duurt het tekenen van een kristal beduidend langer bij onze add-on. Bij een klein kristal duurt het ongeveer 17 maal langer en deze factor neemt toe tot wel 400 bij een groot kristal. Deze vertraging is voornamelijk te wijten aan de bpy module welke eerder traag is. Door het uitvoeren van enkele testen hebben we waargenomen dat gemiddeld 80 procent van de loopduur van ons programma naar het tekenen van de atomen gaat. 
 \par
-Op het vlak van gebruiksvriendelijk heeft onze add-on enkele verschillen ten opzichte van VESTA, zo heeft onze add-on minder features, maar is het eenvoudiger in gebruik en is het kristalmodel interactiever dan dat van VESTA. Welk programma nu juist het meest geschikt is op vlak van gebruiksvriendelijk hangt voornamelijk van de toepassing af. Een groot voordeel dat onze add-on heeft over VESTA is dat het enorm eenvoudig uit te breiden is, terwijl een gebruiker VESTA moeilijk of zelfs niet kan uitbreiden. Dit maakt de add-on erg "future proof".
+Op het vlak van gebruiksvriendelijkheid heeft onze add-on enkele verschillen ten opzichte van VESTA, zo heeft onze add-on minder features, maar is het eenvoudiger in gebruik en is het kristalmodel interactiever dan dat van VESTA. Welk programma nu juist het meest geschikt is op vlak van gebruiksvriendelijk hangt voornamelijk van de toepassing af. Een groot voordeel dat onze add-on heeft over VESTA is dat het enorm eenvoudig uit te breiden is, terwijl een gebruiker VESTA moeilijk of zelfs niet kan uitbreiden. Dit maakt de add-on erg "future proof".
 \par 
 Een probleem waar we in dit onderzoek mee hebben gekampt is het moeilijk vinden van online informatie over de nieuwste versie van de Blender API, die we gebruiken in onze add-on. Doordat de verschillen tussen Blender 2.80 en oudere versies van Blender zijn veel technieken die vroeger mogelijk waren niet meer van toepassing en zijn er weinig voorbeelden van toepassingen die wel werken. Door de goede documentatie van de Blender API was dit echter geen enorm probleem.
 \par
