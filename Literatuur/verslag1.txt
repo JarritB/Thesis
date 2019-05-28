@@ -1,6 +1,0 @@
-- Opzoeken bestaande libraries/modules die cif files naar coorsys omzetten
-- leren scripten in blender(python)
-- notatie .mol files
-- moleculen opbouwen in blender
-- bindingen tussen atomen in blender (o.b.v. afstand en aanklikken 2 atomen)
-- opbouw van classes (atoomnaam,id,coordinaten(blender en in rooster),...)
